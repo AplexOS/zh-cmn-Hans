@@ -9,7 +9,6 @@ function setDataAndTime()
     time = "12:12"
     
     ajaxPostData = {"categories":"dateAndTime", "type": "dateAndTime", "date":date, "time":time};
-    console.info(ajaxPostData);
 
     $.ajax({
         url: "http://192.168.1.202/settings.php",

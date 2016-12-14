@@ -37,7 +37,7 @@
     }
 ```
 
-* Ajax设置静态IP，详情请查看[examples/setStaticIPConfigure.html](../examples/setStaticIPConfigure,html)
+* Ajax设置静态IP，详情请查看[examples/setStaticIPConfigure.html](../examples/setStaticIPConfigure.html)
 
 ```javascript
     function setStaticIPConfigure()
@@ -75,7 +75,7 @@
     }
 ```
 
-* Ajax更新设备日期、时间，详情请查看[examples/setDataAndTime.html](../examples/setDataAndTime,html)
+* Ajax更新设备日期、时间，详情请查看[examples/setDataAndTime.html](../examples/setDataAndTime.html)
 
 ```javascript
     function setDataAndTime()
@@ -84,7 +84,6 @@
         time = "12:12"
         
         ajaxPostData = {"categories":"dateAndTime", "type": "dateAndTime", "date":date, "time":time};
-        console.info(ajaxPostData);
 
         $.ajax({
             url: "http://192.168.1.202/settings.php",            // 修改成目标设备的IP
