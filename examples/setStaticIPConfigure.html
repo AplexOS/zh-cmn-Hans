@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" >
+<head>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+function setStaticIPConfigure()
+{
+    ip = "192.168.1.203";
+    netmask = "255.255.254.0";
+    broadcast = "0.0.0.0";
+    gateway = "192.168.1.254";
+    ajaxPostData = {"categories":"network", "type": "staticIP", "ip":ip, "netmask":netmask, "broadcast":broadcast, "gateway":gateway}
+
+    $.ajax({
+        url: "http://192.168.1.202/settings.php",
+        type: 'POST',
+        data: JSON.stringify(ajaxPostData),
+        dataType:'json',
+        success: function(data){
+            //On ajax success do this
+            console.info("success.");
+            if (data["status"] == "ok"){
+                alert("Settings is Ok. The Machine is rebooting.");
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            //On error do this
+            console.info("error.");
+            if (xhr.status == 200) {
+                alert(ajaxOptions);
+            }
+            else {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        }
+    });
+}
+</script>
+</head>
+<body>
+    <div align="center" style="margin-top:20px;margin-bottom:20px">
+        <input name="Submit" type="button" onClick="javascript:setStaticIPConfigure()" value="Submit">
+    </div>
+</body>
+</html>

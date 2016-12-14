@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" >
+<head>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+function setDataAndTime()
+{
+    date = "2016-12-12";
+    time = "12:12"
+    
+    ajaxPostData = {"categories":"dateAndTime", "type": "dateAndTime", "date":date, "time":time};
+    console.info(ajaxPostData);
+
+    $.ajax({
+        url: "http://192.168.1.202/settings.php",
+        type: 'POST',
+        data: JSON.stringify(ajaxPostData),
+        dataType:'json',
+        success: function(data){
+            //On ajax success do this
+            console.info("success.");
+            if (data["status"] == "ok"){
+                alert("Data and Time Set is Ok.");
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            //On error do this
+            console.info("error.");
+            if (xhr.status == 200) {
+                alert(ajaxOptions);
+            }
+            else {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        }
+    });
+}
+</script>
+</head>
+<body>
+    <div align="center" style="margin-top:20px;margin-bottom:20px">
+        <input name="Submit" type="button" onClick="javascript:setDataAndTime()" value="Submit">
+    </div>
+</body>
+</html>
