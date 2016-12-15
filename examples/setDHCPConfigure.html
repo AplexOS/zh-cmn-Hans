@@ -8,7 +8,7 @@ function setDHCPConfigure()
     ajaxPostData = {"categories":"network", "type": "dhcp"};
 
     $.ajax({
-        url: "http://192.168.1.202/settings.php",
+        url: "http://192.168.1.202/settings.php",       // 注意修改为目标设备IP
         type: 'POST',
         data: JSON.stringify(ajaxPostData),
         dataType:'json',

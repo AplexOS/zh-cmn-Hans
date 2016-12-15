@@ -3,16 +3,12 @@
 <head>
 <script src="js/jquery-2.1.1.min.js"></script>
 <script>
-function setStaticIPConfigure()
+function pingNetWork()
 {
-    ip = "192.168.1.203";
-    netmask = "255.255.254.0";
-    broadcast = "0.0.0.0";
-    gateway = "192.168.1.254";
-    ajaxPostData = {"categories":"network", "type": "staticIP", "ip":ip, "netmask":netmask, "broadcast":broadcast, "gateway":gateway}
+    ajaxPostData = {"categories":"network", "type": "ping", "IPOrDNS": "www.baidu.com"};
 
     $.ajax({
-        url: "http://192.168.1.202/settings.php",       // 注意修改为目标设备IP
+        url: "http://192.168.1.202/settings.php",            // 修改成目标设备的IP
         type: 'POST',
         data: JSON.stringify(ajaxPostData),
         dataType:'json',
@@ -20,13 +16,16 @@ function setStaticIPConfigure()
             //On ajax success do this
             console.info("success.");
             if (data["status"] == "ok"){
-                alert("Settings is Ok. The Machine is rebooting.");
+                alert("Ping to WAN is OK.");
+            } else {
+                alert("Ping to WAN is ERROR.");
             }
         },
         error: function(xhr, ajaxOptions, thrownError) {
             //On error do this
             console.info("error.");
             if (xhr.status == 200) {
+    
                 alert(ajaxOptions);
             }
             else {
@@ -40,7 +39,7 @@ function setStaticIPConfigure()
 </head>
 <body>
     <div align="center" style="margin-top:20px;margin-bottom:20px">
-        <input name="Submit" type="button" onClick="javascript:setStaticIPConfigure()" value="Submit">
+        <input name="Submit" type="button" onClick="javascript:pingNetWork()" value="Ping">
     </div>
 </body>
 </html>
