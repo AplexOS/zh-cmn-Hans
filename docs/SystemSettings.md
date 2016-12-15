@@ -80,7 +80,7 @@
 ```javascript
     function pingNetWork()
     {
-        ajaxPostData = {"categories":"network", "type": "ping", "IPOrDNS": www.baidu.com}; // IPOrDNS这部分修改称目标IP或者DNS
+        ajaxPostData = {"categories":"network", "type": "ping", "IPOrDNS": "www.baidu.com"}; // IPOrDNS这部分修改称目标IP或者DNS
 
         $.ajax({
             url: "http://192.168.1.202/settings.php",            // 修改成目标设备的IP
