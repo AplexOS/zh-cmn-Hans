@@ -2,7 +2,7 @@
 
 ## 分支命名规范
 
-* 二次开发SDK命名方式：软件名-SDK。  
+* 二次开发SDK命名方式：软件名-SDK。  
 例：ARM-Settings（软件名）-SDK ＝ ARM-Settings-SDK
 * 板级支持包BSP命名方式：支持包名-BSP。  
 例：AM335x-Linux4.4（支持包名）-BSP = AM335x-Linux4.4-BSP
