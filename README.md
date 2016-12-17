@@ -2,8 +2,8 @@
 
 ## 分支命名规范
 
-* 二次开发SDK（Software Development Kit）命名方式：软件名-SDK。  
-例：ARM-Settings（软件名）-SDK ＝ ARM-Settings-SDK
+* 二次开发SDK（Software Development Kit）命名方式：软件名-[平台|系统|开发语言]-SDK。
+例：ARM-Settings（软件名）- JavaScript（开发语言）-SDK ＝ ARM-Settings-JavaScript-SDK
 * 板级支持包BSP（Board Support Package）命名方式：支持包名-BSP。  
 例：AM335x-Linux4.4（支持包名）-BSP = AM335x-Linux4.4-BSP
 
@@ -16,6 +16,8 @@
 #### i.MX6 Android SDK 文档
 
 #### i.MX6 Linux SDK 文档
+
+#### i.MX6 Windows SDK 文档
 
 #### i.MX6 Qt SDK 文档
 
@@ -30,6 +32,8 @@
 ### AM335x SDK 文档
 
 #### AM335x Linux SDK 文档
+
+#### AM335x Windows SDK 文档
 
 #### AM335x Qt SDK 文档
 
