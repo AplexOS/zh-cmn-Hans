@@ -29,8 +29,6 @@
 
 ### AM335x SDK 文档
 
-#### AM335x Android SDK 文档
-
 #### AM335x Linux SDK 文档
 
 #### AM335x Qt SDK 文档
