@@ -25,7 +25,7 @@
 
 #### i.MX6 Web SDK 文档
 
-1. [ARM-Settings二次开发文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings-SDK)
+1. [ARM-Settings二次开发文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings-JavaScript-SDK)
 
 ## AM335x 相关文档
 
