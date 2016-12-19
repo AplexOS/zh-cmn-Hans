@@ -41,7 +41,7 @@
 
 #### AM335x Web SDK 文档
 
-1. [ARM-Settings二次开发文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings-SDK)
+1. [ARM-Settings二次开发文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings-JavaScript-SDK)
 
 ## MCU 相关文档
 
