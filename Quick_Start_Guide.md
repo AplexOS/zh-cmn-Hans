@@ -1,4 +1,4 @@
-# Quick Start Guide
+# SBC-7112S-Linux3.0.35-Qt4.8.5 Quick Start Guide
 
 ## 一、说明
 
