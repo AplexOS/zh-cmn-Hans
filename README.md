@@ -16,6 +16,7 @@
 * 如何搭建开发环境；
 * 如何编译U-Boot、Linux Kernel源代码；
 * 如何使用我们提供的example-applications；
+* 如何使用我们搭建好所有环境的VMware虚拟机，内置U-Boot、Linux Kernel、Qt库源代码，可直接进行二次开发。
 
 ## BSP开发包文档目录说明
 
@@ -29,7 +30,9 @@
     │   │   ├── uImage                  // 编译好的uImage
     │   │   └── rootfs.tar.bz2          // 打包好的文件系统
     │   ├── linux-kernel-source-code    // Linux Kernel源代码
-    │   └── u-boot-source-code          // U-boot源代码
+    │   ├── u-boot-source-code          // U-boot源代码
+    │   ├── qt-source-code              // Qt GUI库源代码
+    │   └── VMware-Workstation          // 已经配置好了所有的开发环境的VMware虚拟机
     ├── docs                            // 使用、开发文档
     │   └── README.txt                  // 内容描述指向GitHub对应的BSP文档
     ├── example-applications            // 应用程序示例
