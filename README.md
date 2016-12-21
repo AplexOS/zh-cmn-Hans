@@ -48,4 +48,4 @@
 ## BSP开发包使用、开发参考文档列表
 
 * [SBC-7112S-Linux3.0.35-Qt4.8.5 Quick Start Guide](Quick_Start_Guide.md)；
-* [SBC-7112S-Linux3.0.35-Qt4.8.5 User's Guide](User's_Guide.md);
+* [SBC-7112S-Linux3.0.35-Qt4.8.5 User's Guide](User's_Guide.md)；
