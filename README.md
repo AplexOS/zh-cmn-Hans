@@ -8,11 +8,11 @@
 
 ## BSP开发包文档简述
 
-当您拿到主板以及我们业务提供的BSP包，请参考[SBC-7112S-Linux3.0.35-Qt4.8.5 Quick Start Guide](Quick_Start_Guide.md)，您将获取以下信息：
+当您拿到主板以及我们业务提供的BSP包，请参考[《SBC-7112S-Linux3.0.35-Qt4.8.5 Quick Start Guide》](Quick_Start_Guide.md)，您将获取以下信息：
 * 主板上的主要接口；
 * 如何使用编译工具，并烧录我们已经编译好的镜像；
 
-如果您想进一步对我们主板进行开发，请参考[SBC-7112S-Linux3.0.35-Qt4.8.5 User's Guide](User's_Guide.md)，从该文档中，您将获取以下信息：
+如果您想进一步对我们主板进行开发，请参考[《SBC-7112S-Linux3.0.35-Qt4.8.5 User's Guide》](User's_Guide.md)，从该文档中，您将获取以下信息：
 * 如何搭建开发环境；
 * 如何编译U-Boot、Linux Kernel源代码；
 * 如何使用我们提供的example-applications；
