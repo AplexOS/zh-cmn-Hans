@@ -51,3 +51,7 @@
 * 当出现如下界面则表示烧写成功，点击Stop然后点击Exit退出程序：  
  ![buringOver.png](img/buringOver.png)
 * 对主板断电，并重新上电，确认系统运行状态。
+
+## 五、版权说明
+
+以上所有内容最终解释权归[aplex](http://www.aplextec.com/cn/home.php)公司所有。

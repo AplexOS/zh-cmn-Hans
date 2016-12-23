@@ -443,10 +443,51 @@
 * 如下是使用Qt Creator编译Qt Gui Application项目helloworld成功：
  ![qtcreatorHelloworld.png](img/qtcreatorHelloworld.png)
 
-## 六、SDK Demo
+## 六、Examples SDK Documents
+
+[SBC-7112S-FullTest-Qt4.8.5](https://github.com/AplexOS/Qt-Examples/blob/SBC-7112S-FullTest-Qt4.8.5/README.md)
 
 ## 七、如何使用我们的VMware Workstation 
 
 ### 7.1 登录信息：
+
 * username: aplex
 * passwd: aplex
+
+### 7.2 源代码目录大致如下
+
+```
+    aplex@aplex:~/aplex$ pwd
+    /home/aplex/aplex
+    aplex@aplex:~/aplex$ tree -L 3
+    .
+    ├── board-support
+    │   ├── linux-kernel-source-code
+    │   │   ├── linux_kernel
+    │   │   └── linux_kernel.tar.gz
+    │   ├── qt-source-code
+    │   │   ├── qt-creator
+    │   │   ├── qt-creator-linux-x86-opensource-2.8.1.run
+    │   │   ├── qt-everywhere-opensource-src-4.8.5
+    │   │   ├── qt-everywhere-opensource-src-4.8.5.tar.gz
+    │   │   ├── run.sh
+    │   │   ├── tslib-master
+    │   │   └── tslib-master.zip
+    │   └── u-boot-source-code
+    │       ├── linux-uboot
+    │       └── linux-uboot.tar.gz
+    ├── example-applications
+    │   └── readme.txt
+    └── linux-devkit
+        └── compiler
+            ├── gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12
+            └── gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12.tar.bz2
+
+    45 directories, 367 files
+    aplex@aplex:~/aplex$ 
+```
+
+## 八、版权说明
+
+以上所有内容最终解释权归[aplex](http://www.aplextec.com/cn/home.php)公司所有。
+
