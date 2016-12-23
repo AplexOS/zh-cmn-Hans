@@ -449,6 +449,8 @@
 
 ## 七、如何使用我们的VMware Workstation 
 
+虚拟机存放在BSP包的`board-support/VMware-Workstation`目录下。如果没有BSP包，请您与我们的业务人员联系，他们会向您提供必要的帮助。
+
 ### 7.1 登录信息：
 
 * username: aplex
