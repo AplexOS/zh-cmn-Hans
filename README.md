@@ -13,6 +13,8 @@
 
 ### 2.1 SBC-7112S BSP 文档
 
+* [SBC-7112S-Linux3.0.35-Qt4.8.5-BSP](https://github.com/AplexOS/zh-cmn-Hans/tree/SBC-7112S-Linux3.0.35-Qt4.8.5-BSP)
+
 ### 2.2 SBC-7112S SDK 文档
 
 #### 2.2.1 SBC-7112S Android SDK 文档
