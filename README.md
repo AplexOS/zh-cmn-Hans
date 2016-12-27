@@ -3,11 +3,28 @@
 ## 一、分支命名规范
 
 * 二次开发SDK（Software Development Kit）命名方式：软件名-[平台|系统|开发语言]-SDK  
-例：ARM-Settings（软件名）- JavaScript（开发语言）-SDK ＝ ARM-Settings-JavaScript-SDK
- 
-
-* 板级支持包BSP（Board Support Package）命名方式：支持包名-BSP。  
-例：AM335x-Linux4.4（支持包名）-BSP = AM335x-Linux4.4-BSP
+  * **平台|系统|开发语言**：
+    * Linux；
+    * Android；
+    * Windows；
+    * Javascript；
+    * C；
+    * C#；
+  * **示例**：  
+    `ARM-Settings`（软件名）`-JavaScript`（开发语言）`-SDK` ＝ `ARM-Settings-JavaScript-SDK`
+* 板级支持包BSP（Board Support Package）命名方式：主板名-系统类型-BSP。  
+  * **主板名**：
+    * SBC-7112S；
+    * SBC-7112S-Q；
+    * SBC-7109S-411；
+  * **系统类型**：
+    * Linux3.0.35
+    * Linux3.2.0
+    * Linux3.0.35-Qt4.8.5
+    * Linux3.2.0-Qt4.8.5
+    * Linux4.4
+  * **示例**：  
+    `SBC-7112S`（主板名）`-Linux4.4`（系统类型）`-BSP` = `SBC-7112S-Linux4.4-BSP`
 
 ## 二、版本发行命名规范
 
@@ -16,6 +33,8 @@
 ## 三、SBC-7112S 相关文档
 
 ### 3.1 SBC-7112S BSP 文档
+
+* [SBC-7112S-Linux3.0.35-Qt4.8.5-BSP](https://github.com/AplexOS/zh-cmn-Hans/tree/SBC-7112S-Linux3.0.35-Qt4.8.5-BSP)
 
 ### 3.2 SBC-7112S SDK 文档
 
