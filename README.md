@@ -18,6 +18,10 @@
 * 如何使用我们提供的example-applications；
 * 如何使用我们搭建好所有环境的VMware虚拟机，内置U-Boot、Linux Kernel、Qt库源代码，可直接进行二次开发。
 
+对于Qt桌面系统的配置、修改，请参考[《SBC-7112S-Linux3.0.35-Qt4.8.5 Desktop Display System》](Desktop_Display_System.md)，您将获取以下信息：
+* 桌面系统配置文件位置；
+* 桌面系统如何配置及配置参考；
+
 ## 三、BSP开发包文档目录说明
 
 关于BSP包获取方式，请与您对接的业务人员联系，并获取对应主板的BSP开发包。
@@ -49,6 +53,7 @@
 
 * [SBC-7112S-Linux3.0.35-Qt4.8.5 Quick Start Guide](Quick_Start_Guide.md)；
 * [SBC-7112S-Linux3.0.35-Qt4.8.5 User's Guide](User's_Guide.md)；
+* [SBC-7112S-Linux3.0.35-Qt4.8.5 Desktop Display System](Desktop_Display_System.md)；
 
 ## 五、版权说明
 
