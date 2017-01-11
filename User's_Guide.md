@@ -16,3 +16,7 @@
 ## 三、用户数据配置
 
 这部分主要是根据客户需求进行定制，样例请参考：[《ARM-Settings 获取传感器数据》](Customer_Data.md)
+
+## 四、版权说明
+
+以上所有内容最终解释权归[aplex](http://www.aplextec.com/cn/home.php)公司所有。

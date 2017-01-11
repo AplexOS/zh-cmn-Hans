@@ -20,3 +20,7 @@
 * [ARM-Settings System Settings](System_Settings.md)
 * [ARM-Settings Customer Data](Customer_Data.md)
 * [ARM-Settings JSON Protocol](JSON_Protocol.md)
+
+## 三、版权说明
+
+以上所有内容最终解释权归[aplex](http://www.aplextec.com/cn/home.php)公司所有。
