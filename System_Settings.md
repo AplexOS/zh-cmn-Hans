@@ -1,8 +1,8 @@
-# ARM-Settings SDK Documents
+# ARM-Settings 系统数据配置
 
 如果你现在将要开始阅读、使用该部分内容，我们将假定你已经对网站开发、[jQuery](https://jquery.com/)有一定的了解。
 
-* Ajax设置动态获取IP，详情请查看[examples/setDHCPConfigure.html](../examples/setDHCPConfigure.html)
+* Ajax设置动态获取IP，详情请查看[examples/setDHCPConfigure.html](examples/setDHCPConfigure.html)
 
 ```javascript
     function setDHCPConfigure()
@@ -37,7 +37,7 @@
     }
 ```
 
-* Ajax设置静态IP，详情请查看[examples/setStaticIPConfigure.html](../examples/setStaticIPConfigure.html)
+* Ajax设置静态IP，详情请查看[examples/setStaticIPConfigure.html](examples/setStaticIPConfigure.html)
 
 ```javascript
     function setStaticIPConfigure()
@@ -75,7 +75,7 @@
     }
 ```
 
-* Ajax设置Ping公网，详情请查看[examples/pingNetwork.html](../examples/pingNetwork.html)
+* Ajax设置Ping公网，详情请查看[examples/pingNetwork.html](examples/pingNetwork.html)
 
 ```javascript
     function pingNetWork()
@@ -112,7 +112,7 @@
     }
 ```
 
-* Ajax更新设备日期、时间，详情请查看[examples/setDataAndTime.html](../examples/setDataAndTime.html)
+* Ajax更新设备日期、时间，详情请查看[examples/setDataAndTime.html](examples/setDataAndTime.html)
 
 ```javascript
     function setDataAndTime()

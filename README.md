@@ -1,24 +1,22 @@
-# SDK(Software Development Kit) Documents
+# ARM-Settings SDK(Software Development Kit) Documents
 
-## 二次开发参考文档
+## SDK说明
 
-* 通过HTTP协议远程配置系统：[SystemSettings.md](docs/SystemSettings.md)
-* 通过HTTP协议远程获取传感器数据：[Sensordata.md](docs/SensorData.md)
+如果您仅仅是使用通过浏览器使用ARM-Settings界面对主板进行设置，你只需要参考[《ARM-Settings Quick Start Guide》](Quick_Start_Guide.md)，从中您可以获取到如下信息：
+  * 一些硬件主板信息；
+  * 如何使之动态、静态IP；
+  * 如何设置系统时间；
+  * 如何更新系统；
 
-## 数据传输格式说明
+如果您除了正常的在浏览器中对设备操作，还需要通过其他的软件在代码中对设备进行操作，那么您就要参考[《ARM-Settings User's Guide》](User's_Guide.md)，从中您可以获取如下信息：
+  * 数据传输格式说明；
+  * 通过HTTP协议远程配置系统；
+  * 通过HTTP协议远程获取您定制的信息；
 
-* 采用JSON数据格式对数据进行封装；
-* 数据格式结构下：
- * `categories`字段代表分类；
- * `type`字段代表类型；
- * 后面接具体的数据；
-* 示例：
- * 静态IP设置：`{"categories":"network", "type": "staticIP", "ip":ip, "netmask":netmask, "broadcast":broadcast, "gateway":gateway}`
- * 动态IP设置：`{"categories":"network", "type": "dhcp"}`
- * 测试WAN网络设置：`{"categories":"network", "type": "ping", "IPOrDNS": "www.baidu.com"}`
- * 时间设置：`{"categories":"dateAndTime", "type": "dateAndTime", "date":date, "time":time}`
-* 返回值：
- * 成功返回：`{"status": "ok"}`
- * 失败返回：`{"status": "error"}`
+## 文档列表
 
-具体如何使用请参照《二次开发参考文档》中的描述。
+* [ARM-Settings Quick Start Guide](Quick_Start_Guide.md)；
+* [ARM-Settings User's Guide](User's_Guide.md)；
+* [ARM-Settings System Settings](System_Settings.md)
+* [ARM-Settings Customer Data](Customer_Data.md)
+* [ARM-Settings JSON Protocol](JSON_Protocol.md)
