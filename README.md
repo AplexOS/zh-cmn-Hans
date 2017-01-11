@@ -48,7 +48,7 @@
 
 #### 3.2.5 SBC-7112S Web SDK 文档
 
-1. [ARM-Settings二次开发文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings-JavaScript-SDK)
+1. [ARM-Settings文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings_JavaScript_SDK)
 
 ## 四、SBC-7112S-Q 相关文档
 
@@ -66,7 +66,7 @@
 
 #### 4.2.5 SBC-7112S-Q Web SDK 文档
 
-1. [ARM-Settings二次开发文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings-JavaScript-SDK)
+1. [ARM-Settings文档](https://github.com/AplexOS/zh-cmn-Hans/tree/ARM-Settings_JavaScript_SDK)
 
 ## 五、SBC-7109S-454 相关文档
 
