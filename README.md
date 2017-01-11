@@ -10,26 +10,31 @@
 
 ## 三、IIS FTP配置
 
-* 3.1 打开IIS  
+* **3.1 打开IIS**  
 ![images/openIIS.png](images/openIIS.png)
 
-* 3.2 IIS界面  
+* **3.2 IIS界面**  
 ![images/IISUI.png](images/IISUI.png)
 
-* 3.3 创建FTP Server  
+* **3.3 创建FTP Server**  
 ![images/newFtpServer.png](images/newFtpServer.png)
 
-* 3.4 配置站点信息  
+* **3.4 配置站点信息**  
 ![images/ftpInfo.png](images/ftpInfo.png)
 
-* 3.5 FTP SSL配置  
+* **3.5 FTP SSL配置**  
 ![images/SSLSettings.png](images/SSLSettings.png)
 
-* 3.6 FTP访问配置  
+* **3.6 FTP访问配置**  
 ![images/ftpSettings.png](images/ftpSettings.png)
 
-* 3.7 关闭防火墙  
+* **3.7 关闭防火墙**  
 ![images/closeFirewall.png](images/closeFirewall.png)
 
-* 3.8 ARM主板上ftpget测试
+* **3.8 ARM主板上ftpget测试**  
+拷贝一份uImage文件到FTP Server的root目录下去，并在ARM主板上通过ftpget命令来获取uImage文件：  
 ![images/ftpTest.png](images/ftpTest.png)
+
+## 四、版权说明
+
+以上所有内容最终解释权归[aplex](http://www.aplextec.com/cn/home.php)公司所有。
