@@ -1,6 +1,6 @@
 # ARM-Settings SDK(Software Development Kit) Documents
 
-## SDK说明
+## 一、SDK说明
 
 如果您仅仅是使用通过浏览器使用ARM-Settings界面对主板进行设置，你只需要参考[《ARM-Settings Quick Start Guide》](Quick_Start_Guide.md)，从中您可以获取到如下信息：
   * 一些硬件主板信息；
@@ -13,7 +13,7 @@
   * 通过HTTP协议远程配置系统；
   * 通过HTTP协议远程获取您定制的信息；
 
-## 文档列表
+## 二、文档列表
 
 * [ARM-Settings Quick Start Guide](Quick_Start_Guide.md)；
 * [ARM-Settings User's Guide](User's_Guide.md)；
