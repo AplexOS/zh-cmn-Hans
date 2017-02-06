@@ -71,6 +71,7 @@
 ## 五、SBC-7109S-454 相关文档
 
 ### 5.1 SBC-7109S-454 BSP 文档
+* [SBC-7109S-Linux4.4.12-Qt4.8.5-BSP](https://github.com/AplexOS/zh-cmn-Hans/tree/SBC-7109S-Linux4.4.12-Qt4.8.5-BSP)
 
 ### 5.2 SBC-7109S-454 SDK 文档
 
