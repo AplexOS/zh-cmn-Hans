@@ -361,20 +361,16 @@
 * 如下是使用Qt Creator编译Qt Gui Application项目helloworld成功：
  ![qtcreatorHelloworld.png](img/qtcreatorHelloworld.png)
 
-## 六、Examples SDK Documents
-
-[SBC-7109S-FullTest-Qt4.8.5](https://github.com/AplexOS/Qt-Examples/blob/SBC-7109S-FullTest-Qt4.8.5/README.md)
-
-## 七、如何使用我们的VMware Workstation 
+## 六、如何使用我们的VMware Workstation 
 
 虚拟机存放在BSP包的`board-support/VMware-Workstation`目录下。如果没有BSP包，请您与我们的业务人员联系，他们会向您提供必要的帮助。
 
-### 7.1 登录信息：
+### 6.1 登录信息：
 
 * username: aplex
 * passwd: aplex
 
-### 7.2 源代码目录大致如下
+### 6.2 源代码目录大致如下
 
 ```
     aplex@aplex:~/aplex$ pwd
@@ -407,7 +403,7 @@
 	aplex@aplex:~/aplex$ 
 ```
 
-## 八、版权说明
+## 七、版权说明
 
 以上所有内容最终解释权归[aplex](http://www.aplextec.com/cn/home.php)公司所有。
 
