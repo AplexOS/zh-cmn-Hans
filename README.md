@@ -49,7 +49,7 @@
     │   └── rootfs.tar                  // 打包好的文件系统
     └── linux-devkit                    // 开发工具
         ├── compiler                    // 编译器
-		└── tools               	// 工具
+		└── tools                         // 工具
 
 ```
 
