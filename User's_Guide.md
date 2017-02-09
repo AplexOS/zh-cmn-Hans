@@ -50,7 +50,7 @@
  * `mkdir -p linux-devkit/compiler`
  * 将BSP包中`linux-devkit/compiler`中的编译器放入上面虚拟机`~/aplex/linux-devkit/compiler 当前目录下`的路径中,并解压：
 ```shell
-	cd ~/aplex/linux-devkit/compiler
+	  cd ~/aplex/linux-devkit/compiler
     	tar -xvf gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
 ```
 
