@@ -35,7 +35,7 @@
 	|   |   ├── MLO                     // 编译好的MLO
 	|   |   ├── uEnv.txt                // SD卡系统的配置文件
 	|   |   ├── uEnv_emmc.txt           // Emmc系统的配置文件
-	|   │   └── am335x-sbc7109.dtb       // 设备树编译完的二进制文件
+	|   │   └── am335x-sbc7109.dtb      // 设备树编译完的二进制文件
     │   │        
     │   ├── linux-kernel-source-code    // Linux Kernel源代码
     │   ├── u-boot-source-code          // U-boot源代码
@@ -49,7 +49,7 @@
     │   └── rootfs.tar                  // 打包好的文件系统
     └── linux-devkit                    // 开发工具
         ├── compiler                    // 编译器
-		└── tools                    	// 工具
+		└── tools               	// 工具
 
 ```
 
