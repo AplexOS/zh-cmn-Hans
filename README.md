@@ -1,4 +1,4 @@
-`# SBC-7109S-Linux4.4.12-Qt4.8.5-BSP
+# SBC-7109S-Linux4.4.12-Qt4.8.5-BSP
 
 ## 一、BSP开发包文档说明
 
