@@ -36,7 +36,7 @@
 * 4.1.1 制作SD卡启动系统
 	* 将BSP包中的 linux-devkit/tools/mksd.sh 放到你的Ubuntu 系统中。
 	* 插入你的SD卡并在root用户下运行该脚本，带一个SD卡块设备节点，如/dev/sdb
-		* 步骤如下：
+	* 步骤如下：
 		* su             
 		* 输入你的root密码
 		* umount /dev/sdb*
