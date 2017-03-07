@@ -37,19 +37,17 @@
 	* 将BSP包中的 linux-devkit/tools/mksd.sh 放到你的Ubuntu 系统中。
 	* 插入你的SD卡并在root用户下运行该脚本，带一个SD卡块设备节点，如/dev/sdb
 	* 步骤如下：
-		* su             
+		* ./mksd.sh  /deb/sdb          
 		* 输入你的root密码
-		* umount /dev/sdb*
-		* ./mksd.sh  /dev/sdb
 		* 等待所有操作执行完毕，提示 ： make sd card partition over ....
-		* exit
 	* 重新拔出SD卡并再次插入，等待系统检测到SD卡的两个分区。
 	* 将 board-support/prebuilt-images 文件夹内的所有文件拷入SD卡boot分区。
-	* 将 filesystem 文件夹内的rootfs.tar 解压到SD卡的rootfs分区。
-	* 并在最后运行如下两条命令：
+	* 将 filesystem 文件夹内的rootfs.tar 解压到SD卡的rootfs分区。		
+		* 并在最后运行如下两条命令：
 		* sync
-		* sudo umount  /media/*
-	* 拔出SD卡；
+		* 在 `ubuntu 12.04`中使用`sudo umount /media/*`卸载SD卡。 
+		* 在 `Ubuntu 14.04`以及更高的版本中使用`sudo umount /media/$(whoami)/*`卸载SD卡。		
+		* 拔出SD卡；
 * 4.1.2 启动SD卡系统后烧到系统到emmc
 	* 将SD卡插入主板SD卡槽，上电启动。
 	* 点击桌面的BurnSystem 软件，在点击Start 按钮。
