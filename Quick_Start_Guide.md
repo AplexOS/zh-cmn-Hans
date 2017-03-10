@@ -37,7 +37,7 @@
 	* 将BSP包中的 linux-devkit/tools/mksd.sh 放到你的Ubuntu 系统中。
 	* 插入你的SD卡并在普通用户下运行该脚本，带一个SD卡块设备节点，如/dev/sdb
 	* 步骤如下：
-		* ./mksd.sh  /deb/sdb          
+		* ./mksd.sh  /dev/sdb          
 		* 输入你的root密码
 		* 等待所有操作执行完毕，提示 ： make sd card partition over ....
 	* 重新拔出SD卡并再次插入，等待系统检测到SD卡的两个分区。
