@@ -5,14 +5,14 @@
 * 在阅读本文之前，请确保您已经阅读过[《SBC-7112S-Linux3.0.35-Qt4.8.5 Quick Start Guide》](Quick_Start_Guide.md)
 * 如果您还没有硬件主板或者对应的开发BSP包，请跟我们的业务人员联系，他们将会向您提供相关硬件、软件资源。
 * 本文涉及到的虚拟机操作，均以以下条件进行操作：
- * 采用VMware搭建的Ubuntu 12.04虚拟机；
- * 账户名：aplex；
- * 密码：aplex；
- * 以下执行的命令都是在VMware Ubuntu 12.04虚拟机中执行；
+  * 采用VMware搭建的Ubuntu 12.04虚拟机；
+  * 账户名：aplex；
+  * 密码：aplex；
+  * 以下执行的命令都是在VMware Ubuntu 12.04虚拟机中执行；
 * 您作为本文档的阅读者，我们将假定您已经具备如下技能：
- * 熟悉并掌握Linux Shell命令；
- * 对Linux ARM交叉编译开发流程熟悉；
- * 对Qt Creator使用熟悉；
+  * 熟悉并掌握Linux Shell命令；
+  * 对Linux ARM交叉编译开发流程熟悉；
+  * 对Qt Creator使用熟悉；
 
 ## 二、环境搭建、配置交叉编译器
 
