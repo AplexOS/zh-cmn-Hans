@@ -1,6 +1,6 @@
 # Source Code Repack
 
-本文介绍使用如何在Linux Shell下使用tar命令进行Android源代码打包过程。
+本文介绍如何使用`tar`在Linux Shell下进行Android源代码打包过程。
 
 ## 过程
 
