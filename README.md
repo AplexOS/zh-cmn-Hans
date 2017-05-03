@@ -2,7 +2,7 @@
 
 ## 一、分支命名规范
 
-* 二次开发SDK（Software Development Kit）命名方式：软件名\_[平台|系统|开发语言]\_SDK  
+* 二次开发SDK（Software Development Kit）命名方式：软件名\_[平台|系统|开发语言]\_SDK：
   * **平台|系统|开发语言**：
     * Linux；
     * Android；
@@ -12,7 +12,7 @@
     * C#；
   * **示例**：  
     `ARM-Settings`（软件名）`_JavaScript`（开发语言）`_SDK` ＝ `ARM-Settings_JavaScript_SDK`
-* 板级支持包BSP（Board Support Package）命名方式：主板名\_系统类型\_BSP。  
+* 板级支持包BSP（Board Support Package）命名方式：主板名\_系统类型\_BSP： 
   * **主板名**：
     * SBC-7112S；
     * SBC-7112S-Q；
@@ -25,6 +25,16 @@
     * Linux4.4
   * **示例**：  
     `SBC-7112S`（主板名）`_Linux4.4`（系统类型）`_BSP` = `SBC-7112S_Linux4.4_BSP`
+* 规范标准SPEC（Standard Software Specification）命名方式：规范标准名\_系统类型\_SPEC：
+  * **系统类型**：
+    * Linux3.0.35
+    * Linux3.2.0
+    * Linux3.0.35-Qt4.8.5
+    * Linux3.2.0-Qt4.8.5
+    * Linux4.4
+    * All（所有的系统）
+  * **示例**：
+    `Collaboration-Work`(规范标准名)`_All`（所有的系统）`_SPEC` = `Collaboration-Work_All_SPEC`
 
 ## 二、版本发行命名规范
 
