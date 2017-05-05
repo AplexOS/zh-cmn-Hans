@@ -6,6 +6,7 @@
 ## TP（台北）
 * [GitLab Specification](gitlab/README.md)
 * [Redmine Specification](redmine/README.md)
+* [Embedded Specification](embedded/README.md)
 
 ## SZ（深圳）
 
