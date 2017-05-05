@@ -6,7 +6,6 @@
 * 使用账户名使用邮箱（[Your Full Name]@aplex.com.tw）中的[Your Full Name]部分；
 * 密码可以自由设定；
 
-
 ## 使用规则范例
 
 * **WeeklyReports项目**
@@ -38,24 +37,23 @@
     * 管理人员发现有些文档未更新，发起议题分配`bug`任务，成员完成后关闭`bug`任务；
 * **SBC-7112**
   * 使用`i.MX6`为主控芯片的项目；
-  * 由台北研发二处维护，项目名：`SBC-7112 Main board design`；
+  * 由台北研发二处维护，项目名：`SBC-7112_MainBoardDesign`；
   * 深圳研发二处更多倾向于维护`SBC-7112`衍生主板。
   * 项目管理者规则：
-    * 根项目命名规则：`[Mother Board Name] Main board design`。例如；`SBC-7112 Main board design`
-    * 根据硬件版本创建硬件子项目：`[Mother Board Name] [Board Version]`。例如：`SBC-7112 R1.3`
+    * 根项目命名规则：`[Mother Board Name]_MainBoardDesign`。例如；`SBC-7112_MainBoardDesign`
+    * 根据硬件版本创建硬件子项目：`[Mother Board Name]_[Board Version]`。例如：`SBC-7112_R1.3`
       * 所有的硬件问题需要在该项目中处理。
-    * 根据软件系统创建软件系统项目：`[Mother Board Name] [Software Type With Version]`。例如：`SBC-7112 Android 5.1.1`
+    * 根据软件系统创建软件系统项目：`[Mother Board Name]_[Software Type With Version]`。例如：`SBC-7112_Android5.1.1`
       * 所有的硬件问题需要在该项目中处理。
     * 示例：  
     ```
-    SBC-7112 Main board design
-    └── SBC-7112 R1.3
-        └── SBC-7112 Android 5.1.1
+    SBC-7112_MainBoardDesign
+    └── SBC-7112_R1.3
+        └── SBC-7112_Android5.1.1
     ```
-
 * **SBC-7109**
   * 使用`AM335x`为主控芯片的项目；
-  * 由台北研发二处维护，项目名：`SBC-7109 R1.1`；
+  * 由台北研发二处维护，项目名：`SBC-7109_R1.1`；
   * 深圳研发二处更多倾向于维护`SBC-7109`衍生主板。
   * 项目管理者规则：
     * 请参考`SBC-7112`中项目管理者规则；
