@@ -12,6 +12,7 @@
   * 远程访问：`git clone ssh://git@60.251.148.4:443/ZoroZeng/SBC-7112Android5.1.git`
 * [repo使用参考](https://github.com/ZoroZeng/manifest)
 * [AplexOS分支管理](https://github.com/AplexOS)
+* [EEPROM Data Format](https://github.com/ZengjfOS/EEPROMData)
 
 ## GitLab仓库管理
 
