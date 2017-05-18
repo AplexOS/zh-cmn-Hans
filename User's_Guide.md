@@ -40,11 +40,11 @@
     sudo apt-get install autoconf automake libtool  # 编译tslib时要用到
 ```
 * 在aplex用户目录下创建aplex目录，所有所有操作内容均是在该目录下操作：
- * `mkdir aplex`
- * `cd aplex`
+  * `mkdir aplex`
+  * `cd aplex`
 * 创建编译器存放目录，并拷贝、解压编译器包，配置编译器路径：
- * `mkdir -p linux-devkit/compiler`
- * 将BSP包中`linux-devkit/compiler`中的编译器放入上面虚拟机`linux-devkit/compiler`的路径中,并解压：
+  * `mkdir -p linux-devkit/compiler`
+  * 将BSP包中`linux-devkit/compiler`中的编译器放入上面虚拟机`linux-devkit/compiler`的路径中,并解压：
 ```shell
     aplex@aplex:~/aplex$ ls linux-devkit/compiler/
     gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12.tar.bz2
@@ -165,12 +165,12 @@
     aplex@aplex:~/aplex$ 
 ```
 * 编译U-Boot：
- * `cd board-support/u-boot-source-code/linux-uboot`
- * `make distclean`
- * `make clean`
- * `make mx6dl_sabresd_android_config`
- * `make`
- * 查看U-Boot目录编译后结果：
+  * `cd board-support/u-boot-source-code/linux-uboot`
+  * `make distclean`
+  * `make clean`
+  * `make mx6dl_sabresd_android_config`
+  * `make`
+  * 查看U-Boot目录编译后结果：
 ```shell
     aplex@aplex:~/aplex/board-support/u-boot-source-code/linux-uboot$ ls
     api                            fs              lib_nios2    remake.sh
@@ -232,9 +232,9 @@
     aplex@aplex:~/aplex$ 
 ```
 * 编译Linux Kernel：
- * `cd board-support/linux-kernel-source-code/linux_kernel`
- * `make uImage`
- * 查看U-Boot目录编译后结果：
+  * `cd board-support/linux-kernel-source-code/linux_kernel`
+  * `make uImage`
+  * 查看U-Boot目录编译后结果：
 ```shell
     aplex@aplex:~/aplex/board-support/linux-kernel-source-code/linux_kernel$ ls
     arch                    include      modules.builtin  sound
