@@ -24,9 +24,11 @@
 * [Markdown语法](http://wowubuntu.com/markdown/)
   * [Markdown编辑器--Haroopad](http://pad.haroopress.com/)
 * 仓库示例：
+  * [zh-cmn-Hans](https://github.com/AplexOS/zh-cmn-Hans)
   * [MfgToolA51](https://github.com/ZengjfOS/MfgToolA51)
   * [CSV Data Switch](https://github.com/ZengjfOS/CSVDataSwitch)
   * [EEPROM Data Format](https://github.com/ZengjfOS/EEPROMData)
+  * [WaterWave](https://github.com/ZengjfOS/WaterWave)
 
 ## GitLab仓库管理
 
