@@ -1,5 +1,19 @@
 # Embedded Product Test Tools Specification
 
+## 文件系统标准
+
+## eMMC设备
+
+由于eMMC存储空间目前至少在4G，现在正在考虑要到8G的空间，完全可以满足运行Debian For ARM的存储空间的需求。所以对于这类类型的系统，后续会采用这种文件系统来运作，保证系统一致性和，因为像Ubuntu Core、Raspberry PI等等系统都是从debian那里分支出来的系统。
+
+* [Debian For ARM](https://www.debian.org/ports/arm/)
+
+## NAND Flash设备
+
+由于NAND Flash设备目前最大存储空间为512MB，所以需要采用单独编译的文件系统来做，不能使用Debian For ARM来做。
+* [Busybox](https://www.busybox.net/)；
+* [Buildroot](https://buildroot.org/)；
+
 ## 基础硬件测试软件规范	
 
 倾向于测试硬件基础功能，包括硬件外部扩展功能。
