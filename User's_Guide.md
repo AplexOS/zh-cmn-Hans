@@ -162,7 +162,7 @@
  * `cd /home/aplex/aplex/board-support/linux-kernel-source-code/`
  * `make -j2 am335x_sbc7109_defconfig`
  * `make all -j4`
- * 查看U-Boot目录编译后结果：
+ * 查看Linux Kernel目录编译后结果：
 ```shell
     aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ ls
 	arch         defconfig      ipc          mm               remake.sh       ti_config_fragments
