@@ -21,7 +21,7 @@
 * 安装软件包，若果出现出错，请执行`sudo apt-get update`再继续：
 ```shell
     sudo apt-get update
-	sudo apt-get install vim
+    sudo apt-get install vim
     sudo apt-get install rpm 
     sudo apt-get install m4 
     sudo apt-get install bison 
@@ -36,7 +36,7 @@
     sudo apt-get install gettext 
     sudo apt-get install libglib2.0-dev
     sudo apt-get install tree
-	sudo apt-get install appmenu-gtk:i386
+    sudo apt-get install appmenu-gtk:i386
     sudo apt-get install ia32-libs                  # 由于是64位系统的原因
     sudo apt-get install libc6-dev-i386             # 由于是64位系统的原因
     sudo apt-get install autoconf automake libtool  # 编译tslib时要用到
@@ -50,7 +50,7 @@
  * `mkdir -p linux-devkit/compiler`
  * 将BSP包中`linux-devkit/compiler`中的编译器放入上面虚拟机`~/aplex/linux-devkit/compiler 当前目录下`的路径中,并解压.
 ```shell
-	    cd ~/aplex/linux-devkit/compiler
+	cd ~/aplex/linux-devkit/compiler
     	tar -xvf gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
 ```
 
@@ -58,10 +58,10 @@
 ```shell
     aplex@Aplex:~/aplex$ cat ~/.bashrc
     [...省略前面无关内容]
-
 	export PATH=/home/aplex/aplex/linux-devkit/compiler/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf/bin:$PATH
 	export APLEX_PATH=~/image/
-	
+	export ARCH=arm
+        export CROSS_COMPILE=arm-linux-gnueabihf-
     aplex@Aplex:~$ 
 ```
 * 测试交叉编译器是否正常：
@@ -124,8 +124,7 @@
  * `cd ~/aplex/board-support/u-boot-source-code/u-boot_2016.05`
  * `make distclean`
  * `make clean`
- * `cd ~/aplex/linux-devkit/tools`
- * `./uboot_remake.sh`
+ * `make -j2 O=out  am335x_sbc7109_defconfig all`
  * 查看U-Boot目录编译后结果：
 ```shell
     aplex@aplex:~/aplex/board-support/u-boot-source-code/u-boot_2016.05$ ls out/
@@ -160,9 +159,9 @@
 ```
 
 * 编译Linux Kernel：
- * `cd ~/aplex/linux-devkit/tools`
- * `./kernel_remake .sh defconfig`
- * `./kernel_remake.sh all`
+ * `cd /home/aplex/aplex/board-support/linux-kernel-source-code/`
+ * `make -j2 am335x_sbc7109_defconfig`
+ * `make all -j4`
  * 查看U-Boot目录编译后结果：
 ```shell
     aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ ls
