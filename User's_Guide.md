@@ -5,18 +5,18 @@
 * 在阅读本文之前，请确保您已经阅读过[《SBC-7109S-Linux4.4.12-Qt4.8.5 Quick Start Guide》](Quick_Start_Guide.md)
 * 如果您还没有硬件主板或者对应的开发BSP包，请跟我们的业务人员联系，他们将会向您提供相关硬件、软件资源。
 * 本文涉及到的虚拟机操作，均以以下条件进行操作：
- * 采用VMware搭建的Ubuntu 12.04虚拟机；
- * 账户名：aplex；
- * 密码：aplex；
- * 以下执行的命令都是在VMware Ubuntu 12.04虚拟机中执行；
+  * 采用VMware搭建的Ubuntu 12.04虚拟机；
+  * 账户名：aplex；
+  * 密码：aplex；
+  * 以下执行的命令都是在VMware Ubuntu 12.04虚拟机中执行；
 * 您作为本文档的阅读者，我们将假定您已经具备如下技能：
- * 熟悉并掌握Linux Shell命令；
- * 对Linux ARM交叉编译开发流程熟悉；
- * 对Qt Creator使用熟悉；
+  * 熟悉并掌握Linux Shell命令；
+  * 对Linux ARM交叉编译开发流程熟悉；
+  * 对Qt Creator使用熟悉；
 
 ## 二、环境搭建、配置交叉编译器
 
-* 使用VMware安装：Ubuntu 12.04 64位系统。  
+* 使用VMware安装：**Ubuntu 12.04 64位系统**。  
 如果您没有Ubuntu 12.04镜像，请使用BSP包中`board-support/VMware-Workstation/ubuntu-12.04-desktop-amd64.iso`镜像。
 * 安装软件包，若果出现出错，请执行`sudo apt-get update`再继续：
 ```shell
@@ -42,50 +42,49 @@
     sudo apt-get install autoconf automake libtool  # 编译tslib时要用到
 ```
 * 在aplex用户目录下创建aplex目录，所有所有操作内容均是在该目录下操作：
- * `cd ~`
- * `mkdir image`
- * `mkdir aplex`
- * `cd aplex`
+  * `cd ~`
+  * `mkdir image`
+  * `mkdir aplex`
+  * `cd aplex`
 * 创建编译器存放目录，并拷贝、解压编译器包，配置编译器路径：
- * `mkdir -p linux-devkit/compiler`
- * 将BSP包中`linux-devkit/compiler`中的编译器放入上面虚拟机`~/aplex/linux-devkit/compiler 当前目录下`的路径中,并解压.
-```shell
-	cd ~/aplex/linux-devkit/compiler
-    	tar -xvf gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
-```
-
- * 配置交叉编译器路径：s
-```shell
-    aplex@Aplex:~/aplex$ cat ~/.bashrc
-    [...省略前面无关内容]
-	export PATH=/home/aplex/aplex/linux-devkit/compiler/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf/bin:$PATH
-	export APLEX_PATH=~/image/
-	export ARCH=arm
+  * `mkdir -p linux-devkit/compiler`
+  * 将BSP包中`linux-devkit/compiler`中的编译器放入上面虚拟机`~/aplex/linux-devkit/compiler 当前目录下`的路径中,并解压.
+    ```shell
+        cd ~/aplex/linux-devkit/compiler
+        tar -xvf gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
+    ```
+  * 配置交叉编译器路径：
+    ```shell
+        aplex@Aplex:~/aplex$ cat ~/.bashrc
+        [...省略前面无关内容]
+        export PATH=/home/aplex/aplex/linux-devkit/compiler/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf/bin:$PATH
+        export APLEX_PATH=~/image/
+        export ARCH=arm
         export CROSS_COMPILE=arm-linux-gnueabihf-
-    aplex@Aplex:~$ 
-```
-* 测试交叉编译器是否正常：
-```shell
-    aplex@Aplex:~/aplex$ source ~/.bashrc 
-    aplex@Aplex:~/aplex$ arm             # <---------- 这里按两次Tab键看效果
-	arm2hpdl                        arm-linux-gnueabihf-gcov-tool
-	arm-linux-gnueabihf-addr2line   arm-linux-gnueabihf-gdb
-	arm-linux-gnueabihf-ar          arm-linux-gnueabihf-gfortran
-	arm-linux-gnueabihf-as          arm-linux-gnueabihf-gprof
-	arm-linux-gnueabihf-c++         arm-linux-gnueabihf-ld
-	arm-linux-gnueabihf-c++filt     arm-linux-gnueabihf-ld.bfd
-	arm-linux-gnueabihf-cpp         arm-linux-gnueabihf-nm
-	arm-linux-gnueabihf-elfedit     arm-linux-gnueabihf-objcopy
-	arm-linux-gnueabihf-g++         arm-linux-gnueabihf-objdump
-	arm-linux-gnueabihf-gcc         arm-linux-gnueabihf-ranlib
-	arm-linux-gnueabihf-gcc-5.3.1   arm-linux-gnueabihf-readelf
-	arm-linux-gnueabihf-gcc-ar      arm-linux-gnueabihf-size
-	arm-linux-gnueabihf-gcc-nm      arm-linux-gnueabihf-strings
-	arm-linux-gnueabihf-gcc-ranlib  arm-linux-gnueabihf-strip
-	arm-linux-gnueabihf-gcov        
-
-    aplex@Aplex:~/aplex$ arm
-```
+        aplex@Aplex:~$ 
+    ```
+  * 测试交叉编译器是否正常：
+    ```shell
+        aplex@Aplex:~/aplex$ source ~/.bashrc 
+        aplex@Aplex:~/aplex$ arm             # <---------- 这里按两次Tab键看效果
+        arm2hpdl                        arm-linux-gnueabihf-gcov-tool
+        arm-linux-gnueabihf-addr2line   arm-linux-gnueabihf-gdb
+        arm-linux-gnueabihf-ar          arm-linux-gnueabihf-gfortran
+        arm-linux-gnueabihf-as          arm-linux-gnueabihf-gprof
+        arm-linux-gnueabihf-c++         arm-linux-gnueabihf-ld
+        arm-linux-gnueabihf-c++filt     arm-linux-gnueabihf-ld.bfd
+        arm-linux-gnueabihf-cpp         arm-linux-gnueabihf-nm
+        arm-linux-gnueabihf-elfedit     arm-linux-gnueabihf-objcopy
+        arm-linux-gnueabihf-g++         arm-linux-gnueabihf-objdump
+        arm-linux-gnueabihf-gcc         arm-linux-gnueabihf-ranlib
+        arm-linux-gnueabihf-gcc-5.3.1   arm-linux-gnueabihf-readelf
+        arm-linux-gnueabihf-gcc-ar      arm-linux-gnueabihf-size
+        arm-linux-gnueabihf-gcc-nm      arm-linux-gnueabihf-strings
+        arm-linux-gnueabihf-gcc-ranlib  arm-linux-gnueabihf-strip
+        arm-linux-gnueabihf-gcov        
+    
+        aplex@Aplex:~/aplex$ arm
+    ```
 * 文件夹结构如下：
 ```shell
     aplex@Aplex:~/aplex$ tree -L 3
@@ -103,37 +102,37 @@
 
 * 虚拟机中创建`board-support/u-boot-source-code`和`linux-devkit/tools`目录：
 ```shell
-	cd ~/aplex
-	mkdir board-support/u-boot-source-code -p
-	mkdir linux-devkit/tools -p
+    cd ~/aplex
+    mkdir board-support/u-boot-source-code -p
+    mkdir linux-devkit/tools -p
 ```
 * 将BSP包中`board-support/u-boot-source-code`目录下的u-boot拷贝进虚拟机`board-support/u-boot-source-code`中，并解压tar包，操作如下：
 ```shell
-	cd ~/aplex/board-support/u-boot-source-code/
-	tar -xvf u-boot_2016.05.tar 	
+    cd ~/aplex/board-support/u-boot-source-code/
+    tar -xvf u-boot_2016.05.tar     
 ```
 * 将BSP包中的`linux-devkit/tools`目录下的`uboot_remake.sh`拷贝进虚拟机`linux-devkit/tools`中.
 
 * 将uboot 目录加入环境变量
 ```shell
-	aplex@aplex:~$ cat .bashrc 
-	export UBOOT_PATH=/home/aplex/aplex/board-support/u-boot-source-code/u-boot_2016.05
+    aplex@aplex:~$ cat .bashrc 
+    export UBOOT_PATH=/home/aplex/aplex/board-support/u-boot-source-code/u-boot_2016.05
 ```
 
 * 编译U-Boot：
- * `cd ~/aplex/board-support/u-boot-source-code/u-boot_2016.05`
- * `make distclean`
- * `make clean`
- * `make -j2 O=out  am335x_sbc7109_defconfig all`
- * 查看U-Boot目录编译后结果：
-```shell
-    aplex@aplex:~/aplex/board-support/u-boot-source-code/u-boot_2016.05$ ls out/
-	arch    disk      include   net      System.map  u-boot.bin  u-boot.map
-	board   drivers   lib       scripts  test        u-boot.cfg  u-boot-nodtb.bin
-	cmd     examples  Makefile  source   tools       u-boot.img  u-boot.srec
-	common  fs        MLO       spl      u-boot      u-boot.lds  u-boot.sym
-	aplex@aplex:~/aplex/board-support/u-boot-source-code/u-boot_2016.05$ 
-```
+  * `cd ~/aplex/board-support/u-boot-source-code/u-boot_2016.05`
+  * `make distclean`
+  * `make clean`
+  * `make -j2 O=out  am335x_sbc7109_defconfig all`
+  * 查看U-Boot目录编译后结果：
+    ```shell
+        aplex@aplex:~/aplex/board-support/u-boot-source-code/u-boot_2016.05$ ls out/
+        arch    disk      include   net      System.map  u-boot.bin  u-boot.map
+        board   drivers   lib       scripts  test        u-boot.cfg  u-boot-nodtb.bin
+        cmd     examples  Makefile  source   tools       u-boot.img  u-boot.srec
+        common  fs        MLO       spl      u-boot      u-boot.lds  u-boot.sym
+        aplex@aplex:~/aplex/board-support/u-boot-source-code/u-boot_2016.05$ 
+    ```
 
 ## 四、编译Linux Kernel
 
@@ -143,37 +142,37 @@
 ```
 * 将BSP包中`board-support/linux-kernel-source-code`目录下的内核拷贝进虚拟机`board-support/linux-kernel-source-code`中，并解压tar包：
 ```shell
-	aplex@aplex:~/aplex$ cd board-support/linux-kernel-source-code/
-	aplex@aplex:~/aplex/board-support/linux-kernel-source-code$ ls
-	kernel-4.4.12.tar
-	aplex@aplex:~/aplex/board-support/linux-kernel-source-code$ tar -xvf kernel-4.4.12.tar 
-	aplex@aplex:~/aplex/board-support/linux-kernel-source-code$ cd kernel-4.4.12/
-	aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ make distclean
+    aplex@aplex:~/aplex$ cd board-support/linux-kernel-source-code/
+    aplex@aplex:~/aplex/board-support/linux-kernel-source-code$ ls
+    kernel-4.4.12.tar
+    aplex@aplex:~/aplex/board-support/linux-kernel-source-code$ tar -xvf kernel-4.4.12.tar 
+    aplex@aplex:~/aplex/board-support/linux-kernel-source-code$ cd kernel-4.4.12/
+    aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ make distclean
 ```
 * 将BSP包中`linux-devkit/tools`目录下的`kernel_remake.sh`拷贝进虚拟机的`linux-devkit/tools`.
 
 * 将kernel 目录加入环境变量
 ```shell
-	aplex@aplex:~$ cat .bashrc 
-	export KERNEL_PATH=/home/aplex/aplex/board-support/linux-kernel-source-code/
+    aplex@aplex:~$ cat .bashrc 
+    export KERNEL_PATH=/home/aplex/aplex/board-support/linux-kernel-source-code/
 ```
 
 * 编译Linux Kernel：
- * `cd /home/aplex/aplex/board-support/linux-kernel-source-code/`
- * `make -j2 am335x_sbc7109_defconfig`
- * `make all -j4`
- * 查看Linux Kernel目录编译后结果：
-```shell
-    aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ ls
-	arch         defconfig      ipc          mm               remake.sh       ti_config_fragments
-	block        Documentation  Kbuild       modules.builtin  REPORTING-BUGS  TISDK-README
-	certs        drivers        Kconfig      modules.order    samples         tools
-	config_back  firmware       kernel       Module.symvers   scripts         usr
-	COPYING      fs             lib          mygitpush.sh     security        virt
-	CREDITS      include        MAINTAINERS  net              sound           vmlinux
-	crypto       init           Makefile     README           System.map      vmlinux.o
-	aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ 
-```
+  * `cd /home/aplex/aplex/board-support/linux-kernel-source-code/`
+  * `make -j2 am335x_sbc7109_defconfig`
+  * `make all -j4`
+  * 查看Linux Kernel目录编译后结果：
+    ```shell
+        aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ ls
+        arch         defconfig      ipc          mm               remake.sh       ti_config_fragments
+        block        Documentation  Kbuild       modules.builtin  REPORTING-BUGS  TISDK-README
+        certs        drivers        Kconfig      modules.order    samples         tools
+        config_back  firmware       kernel       Module.symvers   scripts         usr
+        COPYING      fs             lib          mygitpush.sh     security        virt
+        CREDITS      include        MAINTAINERS  net              sound           vmlinux
+        crypto       init           Makefile     README           System.map      vmlinux.o
+        aplex@aplex:~/aplex/board-support/linux-kernel-source-code/kernel-4.4.12$ 
+    ```
 
 ## 五、Qt库编译
 
@@ -182,32 +181,32 @@
 * 拷贝BSP包中相关Qt源代码到上面创建的目录中
 * 如下是所需要的文件，解压tslib、Qt源代码包：
 ```bash
-	aplex@aplex:~/aplex$ tree -L 3
-	.
-	├── board-support
-	│   ├── linux-kernel-source-code
-	│   │   ├── kernel_4.4.12
-	│   │   └── kernel_4.4.12.tar
-	│   ├── qt-source-code
-	│   │   ├── qt-creator
-	│   │   ├── qt-creator-linux-x86-opensource-2.8.1.run
-	│   │   ├── qt-everywhere-opensource-src-4.8.5
-	│   │   ├── qt-everywhere-opensource-src-4.8.5.tar.gz
-	│   │   ├── tslib
-	│   │   └── tslib.tar
-	│   └── u-boot-source-code
-	│       ├── u-boot_2016.05
-	│       └── u-boot_2016.05.tar
-	└── linux-devkit
-	    ├── compiler
-	    │   ├── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf
-	    │   └── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
-	    └── tools
-	        ├── kernel_remake.sh
-	        └── uboot_remake.sh
-	
-	13 directories, 8 files
-	aplex@aplex:~/aplex$ 
+    aplex@aplex:~/aplex$ tree -L 3
+    .
+    ├── board-support
+    │   ├── linux-kernel-source-code
+    │   │   ├── kernel_4.4.12
+    │   │   └── kernel_4.4.12.tar
+    │   ├── qt-source-code
+    │   │   ├── qt-creator
+    │   │   ├── qt-creator-linux-x86-opensource-2.8.1.run
+    │   │   ├── qt-everywhere-opensource-src-4.8.5
+    │   │   ├── qt-everywhere-opensource-src-4.8.5.tar.gz
+    │   │   ├── tslib
+    │   │   └── tslib.tar
+    │   └── u-boot-source-code
+    │       ├── u-boot_2016.05
+    │       └── u-boot_2016.05.tar
+    └── linux-devkit
+        ├── compiler
+        │   ├── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf
+        │   └── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
+        └── tools
+            ├── kernel_remake.sh
+            └── uboot_remake.sh
+    
+    13 directories, 8 files
+    aplex@aplex:~/aplex$ 
 ```
 
 
@@ -218,29 +217,29 @@
 ```shell
     aplex@aplex:~/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5$ cat mkspecs/qws/linux-arm-gnueabihf-g++/qmake.conf 
     #
-	# qmake configuration for building with arm-none-linux-gnueabi-g++
-	#	
+    # qmake configuration for building with arm-none-linux-gnueabi-g++
+    #    
 
-	include(../../common/linux.conf)
-	include(../../common/gcc-base-unix.conf)
-	include(../../common/g++-unix.conf)
-	include(../../common/qws.conf)
-	
-	# modifications to g++.conf
-	QMAKE_CC                = arm-linux-gnueabihf-gcc  -lts
-	QMAKE_CXX               = arm-linux-gnueabihf-g++  -lts
-	QMAKE_LINK              = arm-linux-gnueabihf-g++  -lts
-	QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++  -lts
-	
-	# modifications to linux.conf
-	QMAKE_AR                = arm-linux-gnueabihf-ar cqs
-	QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
-	QMAKE_STRIP             = arm-linux-gnueabihf-strip
-	
-	QMAKE_INCDIR            = /home/aplex/aplex/board-support/qt-source-code/tslib/include
-	QMAKE_LIBDIR            = /home/aplex/aplex/board-support/qt-source-code/tslib/lib
+    include(../../common/linux.conf)
+    include(../../common/gcc-base-unix.conf)
+    include(../../common/g++-unix.conf)
+    include(../../common/qws.conf)
+    
+    # modifications to g++.conf
+    QMAKE_CC                = arm-linux-gnueabihf-gcc  -lts
+    QMAKE_CXX               = arm-linux-gnueabihf-g++  -lts
+    QMAKE_LINK              = arm-linux-gnueabihf-g++  -lts
+    QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++  -lts
+    
+    # modifications to linux.conf
+    QMAKE_AR                = arm-linux-gnueabihf-ar cqs
+    QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
+    QMAKE_STRIP             = arm-linux-gnueabihf-strip
+    
+    QMAKE_INCDIR            = /home/aplex/aplex/board-support/qt-source-code/tslib/include
+    QMAKE_LIBDIR            = /home/aplex/aplex/board-support/qt-source-code/tslib/lib
 
-	load(qt_config)
+    load(qt_config)
     aplex@aplex:~/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5$ 
 ```
 * 修改`mkspecs/common/linux.conf`文件：
@@ -274,7 +273,7 @@
 ```shell
     ./configure \
     -opensource \
-	-prefix /home/aplex/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5    \
+    -prefix /home/aplex/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5    \
     -confirm-license \
     -release \
     -shared \
@@ -315,14 +314,14 @@
     -qt-mouse-tslib -DQT_QLOCALE_USES_FCVT \
     -I/home/aplex/aplex/board-support/qt-source-code/tslib/include \
     -L/home/aplex/aplex/board-support/qt-source-code/tslib/lib \
-	-no-pch
+    -no-pch
 ```
 * 执行`make`，这里可能要等很久，跟主机配置有关。
-* 执行`sudo make install`，文件存放在`/home/aplex/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5	`中:
+* 执行`sudo make install`，文件存放在`/home/aplex/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5    `中:
 ```shell
     aplex@aplex:~/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5$ ls
-	bin  imports  include  lib  mkspecs  phrasebooks  plugins  q3porting.xml  translations
-	aplex@aplex:~/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5$ 
+    bin  imports  include  lib  mkspecs  phrasebooks  plugins  q3porting.xml  translations
+    aplex@aplex:~/aplex/board-support/qt-source-code/qt-everywhere-opensource-src-4.8.5/qt-4.8.5$ 
 ```
 
 ### 5.3 安装Qt Creator
@@ -374,32 +373,32 @@
 ```
     aplex@aplex:~/aplex$ pwd
     /home/aplex/aplex
-	aplex@aplex:~/aplex$ tree -L 3
-	.
-	├── board-support
-	│   ├── linux-kernel-source-code
-	│   │   ├── kernel_4.4.12
-	│   │   └── kernel_4.4.12.tar
-	│   ├── qt-source-code
-	│   │   ├── qt-creator
-	│   │   ├── qt-creator-linux-x86-opensource-2.8.1.run
-	│   │   ├── qt-everywhere-opensource-src-4.8.5
-	│   │   ├── qt-everywhere-opensource-src-4.8.5.tar.gz
-	│   │   ├── tslib
-	│   │   └── tslib.tar
-	│   └── u-boot-source-code
-	│       ├── u-boot_2016.05
-	│       └── u-boot_2016.05.tar
-	└── linux-devkit
-	    ├── compiler
-	    │   ├── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf
-	    │   └── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
-	    └── tools
-	        ├── kernel_remake.sh
-	        └── uboot_remake.sh
-	
-	13 directories, 8 files
-	aplex@aplex:~/aplex$ 
+    aplex@aplex:~/aplex$ tree -L 3
+    .
+    ├── board-support
+    │   ├── linux-kernel-source-code
+    │   │   ├── kernel_4.4.12
+    │   │   └── kernel_4.4.12.tar
+    │   ├── qt-source-code
+    │   │   ├── qt-creator
+    │   │   ├── qt-creator-linux-x86-opensource-2.8.1.run
+    │   │   ├── qt-everywhere-opensource-src-4.8.5
+    │   │   ├── qt-everywhere-opensource-src-4.8.5.tar.gz
+    │   │   ├── tslib
+    │   │   └── tslib.tar
+    │   └── u-boot-source-code
+    │       ├── u-boot_2016.05
+    │       └── u-boot_2016.05.tar
+    └── linux-devkit
+        ├── compiler
+        │   ├── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf
+        │   └── gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
+        └── tools
+            ├── kernel_remake.sh
+            └── uboot_remake.sh
+    
+    13 directories, 8 files
+    aplex@aplex:~/aplex$ 
 ```
 
 ## 七、版权说明
