@@ -1,0 +1,4 @@
+$ sudo devmem2 0xfed02250 w 0x2003cc80        (enable gpio9)
+$ sudo devmem2 0xfed02258 w 0x4                      (set gpio9 input)
+$ sudo devmem2 0xfed02258 w 0x3
+$ sudo devmem2 0xfed02258        (external pull high if return 0x3)

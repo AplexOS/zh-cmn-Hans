@@ -1,0 +1,8 @@
+SOC_GPIOs_4 Address:	0xfed0c000 + 2200
+SOC_GPIOs_5 Address:	0xfed0c000 + 2220
+SOC_GPIOs_6 Address:	0xfed0c000 + 2240
+SOC_GPIOs_8 Address:	0xfed0c000 + 2260
+SOC_GPIOs_9 Address:	0xfed0c000 + 2250
+SOC_GPIOs_10 Address:	0xfed0c000 + 2120
+SOC_GPIOs_17 Address:	0xfed0c000 + 20A0
+SOC_GPIOs_26 Address:	0xfed0c000 + 2160
