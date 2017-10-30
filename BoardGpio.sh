@@ -2,14 +2,14 @@
 
 # 
 # 1. gpio memory address: 
-#   SOC_GPIOs_4 Address:	0xfed0c000 + 0x2200
-#   SOC_GPIOs_5 Address:	0xfed0c000 + 0x2220
-#   SOC_GPIOs_6 Address:	0xfed0c000 + 0x2240
-#   SOC_GPIOs_8 Address:	0xfed0c000 + 0x2260
-#   SOC_GPIOs_9 Address:	0xfed0c000 + 0x2250
-#   SOC_GPIOs_10 Address:	0xfed0c000 + 0x2120
-#   SOC_GPIOs_17 Address:	0xfed0c000 + 0x20A0
-#   SOC_GPIOs_26 Address:	0xfed0c000 + 0x2160
+#   SOC_GPIOs_4 Address:    0xfed0c000 + 0x2200
+#   SOC_GPIOs_5 Address:    0xfed0c000 + 0x2220
+#   SOC_GPIOs_6 Address:    0xfed0c000 + 0x2240
+#   SOC_GPIOs_8 Address:    0xfed0c000 + 0x2260
+#   SOC_GPIOs_9 Address:    0xfed0c000 + 0x2250
+#   SOC_GPIOs_10 Address:    0xfed0c000 + 0x2120
+#   SOC_GPIOs_17 Address:    0xfed0c000 + 0x20A0
+#   SOC_GPIOs_26 Address:    0xfed0c000 + 0x2160
 # 2. Function with Signal Name Mapping
 #  +------------+-------------+---------+-------------+------------+
 #  |  Function  | Signal Name |  Pin#   | Signal Name |  Function  |
@@ -19,6 +19,32 @@
 #  | SOC_GPIO05 |  GPIO_OUT2  |  8 | 7  |   GPIO_OUT1 | SOC_GPIO04 |
 #  | SOC_GPIO08 |  GPIO_OUT4  | 10 | 9  |   GPIO_OUT3 | SOC_GPIO06 |
 #  +------------+-------------+----+----+-------------+------------+
+# 3. Test Example
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 0 -v 1
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 0
+#   1
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 0 -v 0
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 0
+#   0
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 1 -v 1
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 1
+#   1
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 1 -v 0
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 1
+#   0
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 2 -v 1
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 2
+#   1
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 2 -v 0
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 2
+#   0
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 3 -v 1
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 3
+#   1
+#   root@desktop:~ # ./BoardGpio.sh -m o -i 3 -v 0
+#   root@desktop:~ # ./BoardGpio.sh -m i -i 3
+#   0
+#   root@desktop:~ # 
 # 
 
 # debug=true
@@ -134,18 +160,18 @@ case "$gpio_mode" in
     o)
         DEBUG "In Output MODE."
         gpio_address=`printf 0x%X $(($GPIO_BASE_ADDRESS + ${GPIO_SIGNAL_OUTPUT_OFFSET[$gpio_index]}))`
-        gpio_register_value=`printf 0x%X $(($gpio_value + 0x04))`                   # ref: image/PAD_VAL_Register.png
+        gpio_register_value=`printf 0x%X $(($gpio_value + 0x04))`                               # ref: image/PAD_VAL_Register.png
         DEBUG "$gpio_address: $gpio_register_value"
-        sudo devmem2 $gpio_address w ${GPIO_SIGNAL_OUTPUT_ENABLE[$gpio_index]}      # enable gpio
-        sudo devmem2 $gpio_address w $gpio_register_value                           # set gpio value
+        sudo devmem2 $gpio_address w ${GPIO_SIGNAL_OUTPUT_ENABLE[$gpio_index]} > /dev/null 2>&1 # enable gpio
+        sudo devmem2 $((gpio_address + 0x8)) w $gpio_register_value > /dev/null 2>&1            # set gpio value
         
         ;;
     i)
         DEBUG "In Input MOde."
         gpio_address=`printf 0x%X $(($GPIO_BASE_ADDRESS + ${GPIO_SIGNAL_INPUT_OFFSET[$gpio_index]}))`
-        sudo devmem2 $gpio_address w ${GPIO_SIGNAL_INPUT_ENABLE[$gpio_index]}       # enable gpio
-        sudo devmem2 $gpio_address w 0x3                                            # set gpio input(ref: image/PAD_VAL_Register.png)
-        ret_val=`sudo devmem2 $gpio_address`                                        # read value register. if external pull high, it will return 0x3
+        sudo devmem2 $gpio_address w ${GPIO_SIGNAL_INPUT_ENABLE[$gpio_index]} > /dev/null 2>&1  # enable gpio
+        sudo devmem2 $((gpio_address + 0x8)) w 0x3 > /dev/null 2>&1                             # set gpio input(ref: image/PAD_VAL_Register.png)
+        ret_val=`sudo devmem2 $((gpio_address + 0x8)) | xargs |  cut -d : -f 2 `                # read value register. if external pull high, it will return 0x3
         DEBUG "$gpio_address: $ret_val"
 
         echo $(($ret_val & 0x1))

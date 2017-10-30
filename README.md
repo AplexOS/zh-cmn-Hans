@@ -35,3 +35,33 @@ Example:
   ./BoardGpio.sh -m o -i 0 -v 1
   ./BoardGpio.sh -m i -i 0
 ```
+
+## Test Example
+
+```
+root@desktop:~ # ./BoardGpio.sh -m o -i 0 -v 1
+root@desktop:~ # ./BoardGpio.sh -m i -i 0
+1
+root@desktop:~ # ./BoardGpio.sh -m o -i 0 -v 0
+root@desktop:~ # ./BoardGpio.sh -m i -i 0
+0
+root@desktop:~ # ./BoardGpio.sh -m o -i 1 -v 1
+root@desktop:~ # ./BoardGpio.sh -m i -i 1
+1
+root@desktop:~ # ./BoardGpio.sh -m o -i 1 -v 0
+root@desktop:~ # ./BoardGpio.sh -m i -i 1
+0
+root@desktop:~ # ./BoardGpio.sh -m o -i 2 -v 1
+root@desktop:~ # ./BoardGpio.sh -m i -i 2
+1
+root@desktop:~ # ./BoardGpio.sh -m o -i 2 -v 0
+root@desktop:~ # ./BoardGpio.sh -m i -i 2
+0
+root@desktop:~ # ./BoardGpio.sh -m o -i 3 -v 1
+root@desktop:~ # ./BoardGpio.sh -m i -i 3
+1
+root@desktop:~ # ./BoardGpio.sh -m o -i 3 -v 0
+root@desktop:~ # ./BoardGpio.sh -m i -i 3
+0
+root@desktop:~ # 
+```
