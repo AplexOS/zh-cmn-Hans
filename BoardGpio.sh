@@ -174,7 +174,11 @@ case "$gpio_mode" in
         ret_val=`sudo devmem2 $((gpio_address + 0x8)) | xargs |  cut -d : -f 2 `                # read value register. if external pull high, it will return 0x3
         DEBUG "$gpio_address: $ret_val"
 
-        echo $(($ret_val & 0x1))
+        if [ "$ret_val" != "" ]; then
+            echo $(($ret_val & 0x1))
+        else 
+            echo "Please install devmem2 at first."
+	fi
         ;;
 esac
 
