@@ -1,5 +1,7 @@
 # Check System Info
 
+You need to install `ethtool` before use this demo code in your Linux OS. If your system is Ubuntu, you can install like `sudo apt-get install ethtool`, and you can install with `yum install ethtool` in RedHat/CentOS system.
+
 ## Function Description
 
 ### Check Ethernet Link status
