@@ -18,13 +18,13 @@
 `int checkUSBDiskExist(void)`
 
 * Return:
-  * `-1`: No Exist;
   * `0`: Exist;
+  * `-1`: Not Exist;
 
 ### Check Has User Login
 
 `int checkUserLogin(void)`
 
 * Return:
-  * `-1`: No User Login;
   * `0`: Has User Login;
+  * `-1`: No User Login;
