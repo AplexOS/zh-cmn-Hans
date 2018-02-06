@@ -62,7 +62,7 @@
   * u-boot2016.05 源码下载：
   ```shell
 	  cd ~/aplex
-	  mkdir u-boot2016.05 & cd u-boot2016.05
+	  mkdir u-boot2016.05 && cd u-boot2016.05
 	  touch 1.txt
 	  git init
 	  git add .
@@ -73,7 +73,7 @@
   * kernel4.4.12 源码下载：
   ```shell
 	  cd ~/aplex
-	  mkdir kernel4.4.12 & cd kernel4.4.12
+	  mkdir kernel4.4.12 && cd kernel4.4.12
 	  touch 1.txt
 	  git init
 	  git add .
@@ -84,7 +84,7 @@
   * rootfs 源文件下载：
   ```shell
 	  cd ~/aplex
-	  mkdir filesytem & cd filesytem
+	  mkdir filesytem && cd filesytem
   ```
   ```shell
 	  # 下面这一段必须升级到root 用户下操作，原因是因为 rootfs 的权限问题。
