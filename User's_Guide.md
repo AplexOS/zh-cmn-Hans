@@ -22,10 +22,10 @@
 * 下载交叉编译器，并放入虚拟机的家目录下的 aplex 目录，并配置环境变量：
   * 交叉编译器下载地址为：
 	* [CROSS_COMPILER](https://releases.linaro.org/components/toolchain/binaries/5.3-2016.02/arm-linux-gnueabihf/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz)
-  * 下载完了将它放入虚拟机 ~/aplex 目录，并解压
+  * 下载完了将它放入虚拟机 ~/aplex 目录，并解压:
 	```shell
-		cd  ~/aplex
-		tar -xvf  gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
+        cd  ~/aplex
+        tar -xvf  gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
 	```
   * 配置交叉编译器路径：
     ```shell
@@ -34,11 +34,11 @@
         export PATH=~/aplex/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf/bin:$PATH
         export ARCH=arm
         export CROSS_COMPILE=arm-linux-gnueabihf-
-        aplex@Aplex:~$ 
+        aplex@Aplex:~$
     ```
   * 测试交叉编译器是否正常：
     ```shell
-        aplex@Aplex:~/aplex$ source ~/.bashrc 
+        aplex@Aplex:~/aplex$ source ~/.bashrc
         aplex@Aplex:~/aplex$ arm             # <---------- 这里按两次Tab键看效果
         arm2hpdl                        arm-linux-gnueabihf-gcov-tool
         arm-linux-gnueabihf-addr2line   arm-linux-gnueabihf-gdb
@@ -54,8 +54,8 @@
         arm-linux-gnueabihf-gcc-ar      arm-linux-gnueabihf-size
         arm-linux-gnueabihf-gcc-nm      arm-linux-gnueabihf-strings
         arm-linux-gnueabihf-gcc-ranlib  arm-linux-gnueabihf-strip
-        arm-linux-gnueabihf-gcov        
-    
+        arm-linux-gnueabihf-gcov
+
         aplex@Aplex:~/aplex$ arm
     ```
 ## 三、u-boot, kernel, rootfs  下载：
@@ -64,7 +64,7 @@
 	  cd ~/aplex
 	  mkdir u-boot2016.05 & cd u-boot2016.05
 	  touch 1.txt
-	  git init 
+	  git init
 	  git add .
 	  git commit -m test
 	  git pull git@github.com:AplexOS/U-Boot.git  CMI_AT151-Linux-Uboot-v2016.05:CMI_AT151-Linux-Uboot-v2016.05
@@ -74,7 +74,7 @@
 	  cd ~/aplex
 	  mkdir kernel4.4.12 & cd kernel4.4.12
 	  touch 1.txt
-	  git init 
+	  git init
 	  git add .
 	  git commit -m test
 	  git pull git@github.com:AplexOS/Linux-Kernel.git  CMI_AT151-Linux-Kernel-v4.4.12:CMI_AT151-Linux-Kernel-v4.4.12
@@ -84,19 +84,19 @@
 	  cd ~/aplex
 	  mkdir filesytem & cd filesytem
   ```
-  ```shell 
+  ```shell
 	  # 下面这一段必须升级到root 用户下操作，原因是因为 rootfs 的权限问题。
-	  # 升级到 root 用户的命令是 su 
-	  su 
+	  # 升级到 root 用户的命令是 su
+	  su
 	  touch 1.txt
-	  git init 
+	  git init
 	  git add .
 	  git commit -m test
 	  git pull git@github.com:AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:CMI_AT151_LINUX4.4.12_ROOTFS
 	  # 下载完了之后推出 root 用户，命令是 exit。
 	  exit
   ```
-  
+
 ## 四、源代码的编译，ubi 文件系统的生成：
   * u-boot2016.05 编译：
   ```shell
@@ -124,7 +124,7 @@
   ```
 ## 五、SD卡的制作：
   * 将SD卡插入 Ubuntu 虚拟机中，并等待被检测生成设备节点。
-  * 首先要将挂载的设备节点解除挂载并格式化： 
+  * 首先要将挂载的设备节点解除挂载并格式化：
   ```shell
       sudo umount  /media/am335x/*
 	  # 这里的 am335x 是我用户名，当前环境是 ubuntu14.04
@@ -182,7 +182,7 @@
 	  partitions, please see the fdisk manual page for additional
 	  information.
 	  Syncing disks.
-	  am335x@am335x:~$ 
+	  am335x@am335x:~$
   ```
   * 对 SD 卡进行 FAT 16格式化
   ```shell
@@ -202,7 +202,7 @@
   * 注：烧写时为拔出J1，启动系统时为 J1 扣上。
 ## 七、启动
   * 串口登录:
-	* 请参考原理图制作debug port线，1角为 VCC，2角TX，3角RX，4角GND。 
+	* 请参考原理图制作debug port线，1角为 VCC，2角TX，3角RX，4角GND。
     * 注： 此信号为3.3V TTL 信号，如果需要与PC连接，通常PC需要一个USB转TTL的模块才能与此连接，切不可直接连接 RS232。
     * Debug port 设置：波特率：115200，数据位：8，校验：none ， 停止位：1。
 	* 登录账号：root, 密码：root。
@@ -217,6 +217,6 @@
 
 
 
-  
-	
-  
+
+
+
