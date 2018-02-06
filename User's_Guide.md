@@ -15,9 +15,9 @@
 ```
 * 在当前用户目录下创建aplex目录，所有所有操作内容均是在该目录下操作：
 ```shell
-	cd ~
-	mkdir image aplex
-	cd aplex
+    cd ~
+    mkdir image aplex
+    cd aplex
 ```
 * 下载交叉编译器，并放入虚拟机的家目录下的 aplex 目录，并配置环境变量：
   * 交叉编译器下载地址为：
@@ -68,6 +68,7 @@
 	  git add .
 	  git commit -m test
 	  git pull git@github.com:AplexOS/U-Boot.git  CMI_AT151-Linux-Uboot-v2016.05:CMI_AT151-Linux-Uboot-v2016.05
+	  git checkout CMI_AT151-Linux-Uboot-v2016.05
   ```
   * kernel4.4.12 源码下载：
   ```shell
@@ -78,6 +79,7 @@
 	  git add .
 	  git commit -m test
 	  git pull git@github.com:AplexOS/Linux-Kernel.git  CMI_AT151-Linux-Kernel-v4.4.12:CMI_AT151-Linux-Kernel-v4.4.12
+	  git checkout CMI_AT151-Linux-Kernel-v4.4.12
   ```
   * rootfs 源文件下载：
   ```shell
@@ -93,6 +95,7 @@
 	  git add .
 	  git commit -m test
 	  git pull git@github.com:AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:CMI_AT151_LINUX4.4.12_ROOTFS
+	  git checkout  CMI_AT151_LINUX4.4.12_ROOTFS
 	  # 下载完了之后推出 root 用户，命令是 exit。
 	  exit
   ```
