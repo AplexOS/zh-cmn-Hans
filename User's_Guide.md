@@ -96,7 +96,7 @@
 	  git commit -m test
 	  git pull git@github.com:AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:CMI_AT151_LINUX4.4.12_ROOTFS
 	  git checkout  CMI_AT151_LINUX4.4.12_ROOTFS
-	  # 下载完了之后推出 root 用户，命令是 exit。
+	  # 下载完了之后退出 root 用户，命令是 exit。
 	  exit
   ```
 
