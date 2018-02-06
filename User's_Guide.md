@@ -64,14 +64,14 @@
 	  cd ~/aplex
 	  mkdir u-boot2016.05 && cd u-boot2016.05
 	  git init
-	  git pull http://github.com:AplexOS/U-Boot.git  CMI_AT151-Linux-Uboot-v2016.05:master
+	  git pull http://github.com/AplexOS/U-Boot.git  CMI_AT151-Linux-Uboot-v2016.05:master
   ```
   * kernel4.4.12 源码下载：
   ```shell
 	  cd ~/aplex
 	  mkdir kernel4.4.12 && cd kernel4.4.12
 	  git init
-	  git pull http://github.com:AplexOS/Linux-Kernel.git  CMI_AT151-Linux-Kernel-v4.4.12:master
+	  git pull http://github.com/AplexOS/Linux-Kernel.git  CMI_AT151-Linux-Kernel-v4.4.12:master
   ```
   * rootfs 源文件下载：
   ```shell
@@ -83,7 +83,7 @@
 	  # 升级到 root 用户的命令是 su
 	  su
 	  git init
-	  git pull http://github.com:AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:master
+	  git pull http://github.com/AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:master
 	  # 下载完了之后退出 root 用户，命令是 exit。
 	  exit
   ```
@@ -109,6 +109,7 @@
   * ubi 文件系统的生成：
   ```shell
 	  cd  ~/aplex/filesytem/
+	  sudo apt-get install mtd-utils
 	  sudo chmod 777 mkubiimg.sh  mygitfilesystem.sh  ubinize.cfg
 	  ./mkubiimg.sh
 	  #  生成的 ubi.img 也放在了 ~/image 下面。
@@ -181,6 +182,7 @@
   ```
   * 拔出 SD 卡并重新插入， 将 ~/image 下面的所有文件拷贝到  SD 卡第一个分区内：
   ```shell
+      sudo mkdir /media/am335x/sdb1 && sudo mount -t vfat /dev/sdb1 /media/am335x/sdb1
       sudo cp ~/image/*  /media/am335x/sdb1  -rf
 	  sync
   ```
