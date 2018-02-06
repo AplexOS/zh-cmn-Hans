@@ -63,23 +63,15 @@
   ```shell
 	  cd ~/aplex
 	  mkdir u-boot2016.05 && cd u-boot2016.05
-	  touch 1.txt
-	  git init
-	  git add .
-	  git commit -m test
-	  git pull git@github.com:AplexOS/U-Boot.git  CMI_AT151-Linux-Uboot-v2016.05:CMI_AT151-Linux-Uboot-v2016.05
-	  git checkout CMI_AT151-Linux-Uboot-v2016.05
+	  git init
+	  git pull http://github.com:AplexOS/U-Boot.git  CMI_AT151-Linux-Uboot-v2016.05:master
   ```
   * kernel4.4.12 源码下载：
   ```shell
 	  cd ~/aplex
 	  mkdir kernel4.4.12 && cd kernel4.4.12
-	  touch 1.txt
 	  git init
-	  git add .
-	  git commit -m test
-	  git pull git@github.com:AplexOS/Linux-Kernel.git  CMI_AT151-Linux-Kernel-v4.4.12:CMI_AT151-Linux-Kernel-v4.4.12
-	  git checkout CMI_AT151-Linux-Kernel-v4.4.12
+	  git pull http://github.com:AplexOS/Linux-Kernel.git  CMI_AT151-Linux-Kernel-v4.4.12:master
   ```
   * rootfs 源文件下载：
   ```shell
@@ -90,12 +82,8 @@
 	  # 下面这一段必须升级到root 用户下操作，原因是因为 rootfs 的权限问题。
 	  # 升级到 root 用户的命令是 su
 	  su
-	  touch 1.txt
 	  git init
-	  git add .
-	  git commit -m test
-	  git pull git@github.com:AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:CMI_AT151_LINUX4.4.12_ROOTFS
-	  git checkout  CMI_AT151_LINUX4.4.12_ROOTFS
+	  git pull http://github.com:AplexOS/Filesystem.git CMI_AT151_LINUX4.4.12_ROOTFS:master
 	  # 下载完了之后退出 root 用户，命令是 exit。
 	  exit
   ```
