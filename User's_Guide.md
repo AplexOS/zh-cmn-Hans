@@ -18,14 +18,14 @@
 	cd ~
 	mkdir image aplex
 	cd aplex
-```shell
+```
 * 下载交叉编译器，并放入虚拟机的家目录下的 aplex 目录，并配置环境变量：
   * 交叉编译器下载地址为：
 	* [CROSS_COMPILER](https://releases.linaro.org/components/toolchain/binaries/5.3-2016.02/arm-linux-gnueabihf/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz)
   * 下载完了将它放入虚拟机 ~/aplex 目录，并解压
 	```shell
 		cd  ~/aplex
-		tar -xvf 
+		tar -xvf  gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz
 	```
   * 配置交叉编译器路径：
     ```shell
