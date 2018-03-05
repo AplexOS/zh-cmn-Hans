@@ -76,11 +76,11 @@
 	sudo kpartx -av /dev/loop0
 	sudo mkfs.vfat    -n "boot" -F 16  /dev/mapper/loop0p1
     ```
-* 挂载这个分区并把 MLO、u-boot.img zImage am335x-cmi_at151.dtb ubi.img 拷贝进去。
+* 挂载这个分区并把 MLO、u-boot.img uImage ubi.img 拷贝进去。
     ```shell
 	sudo mount /dev/mapper/loop0p1 /mnt
  	cd ~/image
-	sudo cp  MLO、u-boot.img zImage am335x-cmi_at151.dtb ubi.img  /mnt -rf
+	sudo cp  MLO、u-boot.img uImage ubi.img  /mnt -rf
 	sync
 	sudo umount /mnt
     ```
@@ -101,4 +101,4 @@
 	选择写入，不要多选其他选项。
 	烧写完毕，ok，安全拔出 SD 卡。
     ```
-* 烧入系统到 CMI_AT151 方法请参考： [CMI_AT151_User's Guide](User's_Guide.md)
+* 烧入系统到 ECM_5410 方法请参考： [ECM_5410_User's Guide](User's_Guide.md)
