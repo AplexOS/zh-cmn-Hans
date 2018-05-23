@@ -3,7 +3,7 @@
 ## 一、说明：
 
 * 由于虚拟机的 USB 支持不是很完善，所以可能出现 SD 卡在虚拟机分区失败的现象。
-* 出现的现象为：在虚拟机内将 MLO、u-boot.omg ... 拷贝到 SD 卡 boot 分区后上电烧入失败的现象。
+* 出现的现象为：在虚拟机内将 MLO、u-boot.img ... 拷贝到 SD 卡 boot 分区后上电烧入失败的现象。
 * 所以加一篇文档说明直接在虚拟机内生成一个完整的 SD 卡镜像，然后直接在 Windows 对 SD 卡进行操作。
 
 ## 二、 在 Ubuntu14.04 虚拟机上生成 SD.img。
@@ -11,12 +11,13 @@
 * 在虚拟机普通用户下执行如下命令（带 # 为注释）
 * 生成一个带有 fat16 分区格式的镜像。
     ```shell
-        sudo dd if=/dev/zero of=SD.img  bs=1M count=100
-        # 生成一个 100M 的镜像。
+    sudo dd if=/dev/zero of=SD.img  bs=1M count=150
+    /dev/loop0
+    # 生成一个 100M 的镜像。
 	sudo losetup -f --show SD.img
 	# 会显示一个设备名，这个名称你可以看作是块设备。
 	# 执行下列分区操作
-	am335x@am335x:~/test$ sudo fdisk  /dev/loop0 
+	am335x@am335x:~/test$ sudo fdisk  /dev/loop0
 	Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 	Building a new DOS disklabel with disk identifier 0xc4488340.
 	Changes will remain in memory only, until you decide to write them.
@@ -30,9 +31,9 @@
 	e   extended
 	Select (default p): p
 	Partition number (1-4, default 1): 1
-	First sector (2048-204799, default 2048): 
+	First sector (2048-204799, default 2048):
 	Using default value 2048
-	Last sector, +sectors or +size{K,M,G} (2048-204799, default 204799): 
+	Last sector, +sectors or +size{K,M,G} (2048-204799, default 204799):
 	Using default value 204799
 
 	Command (m for help): t
@@ -43,7 +44,7 @@
 	Command (m for help): a
 	Partition number (1-4): 1
 
-	Command (m for help): p 
+	Command (m for help): p
 
 	Disk /dev/loop0: 104 MB, 104857600 bytes
 	255 heads, 63 sectors/track, 12 cylinders, total 204800 sectors
@@ -54,8 +55,8 @@
 
 		Device Boot      Start         End      Blocks   Id  System
 	/dev/loop0p1   *        2048      204799      101376    e  W95 FAT16 (LBA)
-	
-	Command (m for help): w 
+
+	Command (m for help): w
 	The partition table has been altered!
 
 	Calling ioctl() to re-read partition table.
@@ -68,19 +69,19 @@
 	partitions, please see the fdisk manual page for additional
 	information.
 	Syncing disks.
-	am335x@am335x:~/test$ 
+	am335x@am335x:~/test$
     ```
 * 格式化这个 fat16 分区：
-    ```shell
-	sudo  sudo kpartx -av /dev/loop0
-	sudo kpartx -av /dev/loop0
-	sudo mkfs.vfat    -n "boot" -F 16  /dev/mapper/loop0p1
-    ```
+  ```shell
+    sudo apt-get install kpartx
+    sudo kpartx -av /dev/loop0
+    sudo mkfs.vfat    -n "boot" -F 16  /dev/mapper/loop0p1
+  ```
 * 挂载这个分区并把 MLO、u-boot.img zImage am335x-cmi_at151.dtb ubi.img 拷贝进去。
     ```shell
 	sudo mount /dev/mapper/loop0p1 /mnt
  	cd ~/image
-	sudo cp  MLO、u-boot.img zImage am335x-cmi_at151.dtb ubi.img  /mnt -rf
+	sudo cp  MLO、u-boot.img uImage  ubi.img  /mnt -rf
 	sync
 	sudo umount /mnt
     ```
@@ -101,4 +102,4 @@
 	选择写入，不要多选其他选项。
 	烧写完毕，ok，安全拔出 SD 卡。
     ```
-* 烧入系统到 CMI_AT151 方法请参考： [CMI_AT151_User's Guide](User's_Guide.md)
+* 烧入系统到 SBC_7109_455 方法请参考： [CROSS_COMPILE](User's_Guide.md)
