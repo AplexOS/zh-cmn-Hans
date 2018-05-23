@@ -67,7 +67,7 @@
     git init
     git pull https://github.com/AplexOS/U-Boot  SBC-7109S-455-Linux-Uboot-v2011.09:master
   ```
-  * kernel4.4.12 源码下载：
+  * kernel3.2.0 源码下载：
   ```shell
     cd ~/aplex/
     mkdir kernel3.2.0 && cd kernel3.2.0
@@ -96,7 +96,7 @@
     make O=out ok335x
     cp out/MLO  out/u-boot.img   ~/image/  -rf
     sudo cp out/tools/mkimage /bin/  -rf
-    # mkimage 是生成 Uimage 的工具
+    # mkimage 是生成 uImage 的工具
     sync
   ```
   * kernel3.2.0 编译：
