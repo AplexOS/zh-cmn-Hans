@@ -102,4 +102,4 @@
 	选择写入，不要多选其他选项。
 	烧写完毕，ok，安全拔出 SD 卡。
     ```
-* 烧入系统到 SBC_7109_455 方法请参考： [CROSS_COMPILE](User's_Guide.md)
+* 烧入系统到 SBC_7109_455 方法请参考： [CROSS_COMPILE](Src_compiler.md)
