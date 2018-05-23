@@ -101,5 +101,6 @@
 	映像文件选择 SD.img，设备端插入 SD 自动显示。
 	选择写入，不要多选其他选项。
 	烧写完毕，ok，安全拔出 SD 卡。
-    ```
-* 烧入系统到 SBC_7109_455 方法请参考： [CROSS_COMPILE](Src_compiler.md)
+    ```    
+* 源代码编译方法请参考： [CROSS_COMPILE](Src_compiler.md)
+* 烧录启动方法请参考： [Start](Init.md)
