@@ -8,3 +8,6 @@
 
 ### 三、系统烧录，以及上电，请参考
   * [Start](Init.md)
+
+### 四、QT4.8.5 交叉编译，请参考：
+  * [QTcross_compiler](Qt4.8.5_Compiler.md)
