@@ -11,3 +11,6 @@
 
 ### 四、QT4.8.5 交叉编译，请参考：
   * [QTcross_compiler](Qt4.8.5_Compiler.md)
+
+### 五、需要添加 Qt 程序到文件系统，请参考：
+  * [QtAdd](Qt_Add.md)

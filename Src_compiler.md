@@ -110,6 +110,7 @@
   ```shell
 	  cd  ~/aplex/filesytem/
 	  sudo apt-get install mtd-util
+    ./mkubiimg.sh
   ```
 
 ## 五、通过下面的方法，制作 SD 卡：

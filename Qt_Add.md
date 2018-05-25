@@ -83,3 +83,4 @@
         /usr/share/qt/bin/untitled -qws -geometry $geo $*
   fi
 ```
+* 重新参考[Src_compiled](Src_compiler.md) 制作ubi.img 文件系统， 参考 [SDmake](MakeSDimg.md) 制作 SD 镜像， 参考 [Init](Init.md) 烧录，并启动系统。
