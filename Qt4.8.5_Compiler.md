@@ -1,19 +1,15 @@
 # Qt4.8.5 交叉编译说明
 
 ## 一、相关源码下载：
-* tslib 源码下载地址 : [tslib](https://github.com/kergoth/tslib/releases/download/1.5/tslib-1.5.tar.xz)
-* Qt4.8.5 源码下载地址： [Qt4.8.6](http://download.qt.io/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
+* tslib 源码下载地址 : [tslib](https://github.com/kergoth/tslib/releases/download/1.16/tslib-1.16.tar.bz2)
+* Qt4.8.5 源码下载地址： [Qt4.8.5](http://download.qt.io/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
 
 ## 二、 tslib 的移植
 * 解压 tslib.
 * 进入 tslib 源代码目录
-* 修改 autogen.sh
+* 创建 out 目录:
 ```sh
-  #!/bin/sh
-
-  echo "ac_cv_func_malloc_0_nonnull=yes" >daiq_tslib.cache
-  autoreconf -f -i -I $(pwd)/m4
-  exit $?
+  mkdir out
 ```
 * 运行 autogen.sh
 ```sh
