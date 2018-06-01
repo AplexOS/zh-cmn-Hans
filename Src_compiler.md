@@ -84,7 +84,7 @@
 	  # 升级到 root 用户的命令是 su
 	  su
 	  git init
-    git pull https://github.com/AplexOS/Filesystem   SBC_7109S_455_LINUX3.2.0_QT4.8.5_ROOTFS:master
+    	  git pull https://github.com/AplexOS/Filesystem   SBC_7109S_455_LINUX3.2.0_QT4.8.5_ROOTFS:master
 	  # 下载完了之后退出 root 用户，命令是 exit。
 	  exit
   ```
@@ -108,6 +108,7 @@
   ```
   * ubi 文件系统的生成：
   ```shell
+  	  sudo apt-get install mtd-utils
 	  cd  ~/aplex/filesytem/
 	  sudo apt-get install mtd-util
     ./mkubiimg.sh
