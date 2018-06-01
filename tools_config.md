@@ -149,7 +149,7 @@ ln  -s   /usr/share/zoneinfo/posix/Asia/Shanghai  /etc/localtime
 2.设置本地网关（路由器IP）：
 3.设置DNS服务器IP:
 4.重启网卡：
-参考第八章（静态ip的设置）。
+参考第一章（静态ip的设置）。
 ```
 
 * DNS服务器的设置，修改/etc/init.d/S40network，如下图所示：
