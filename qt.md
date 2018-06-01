@@ -314,6 +314,7 @@ Qt Version，点击add在version name输入名字(随便写一个)，在 qmake l
 ```
 
     ![qmake](img/qt5/6/6.3.png)
+    
 ```sh
 图 6.3所示，在此页面指定项目名称和项目所在路径。
 ```
