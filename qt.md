@@ -292,7 +292,7 @@ Qt Version，点击add在version name输入名字(随便写一个)，在 qmake l
 ```
 * 配置PC机QT开发软件的arm版本Kits工具，参见图5.3
 
-    ![kit](img/qt5/5/5.3.png)
+![kit](img/qt5/5/5.3.png)
 ```sh
 图5.3 arm版本Kits工具配置步骤
 
@@ -303,53 +303,53 @@ Qt Version，点击add在version name输入名字(随便写一个)，在 qmake l
 * 在PC机上编译一个arm版本QT程序小实例，步骤如以下图
 片所示。
 
-    ![qmake](img/qt5/6/6.1.png)
+![qmake](img/qt5/6/6.1.png)
 ```sh
 图 6.1 创建一个qt项目
 ```
 
-    ![qmake](img/qt5/6/6.2.png)
+![qmake](img/qt5/6/6.2.png)
 ```sh
 图 6.2
 ```
 
-    ![qmake](img/qt5/6/6.3.png)
+![qmake](img/qt5/6/6.3.png)
     
 ```sh
 图 6.3所示，在此页面指定项目名称和项目所在路径。
 ```
 
-    ![qmake](img/qt5/6/6.4.png)
+![qmake](img/qt5/6/6.4.png)
 ```sh
 图 6.4所示，在此页面选取上一小节中配置的交叉编译工具链
 ```
 
-    ![qmake](img/qt5/6/6.5.png)
+![qmake](img/qt5/6/6.5.png)
 ```sh
 图 6.5所示，在此页面选取窗口基类
 ```
 
-    ![qmake](img/qt5/6/6.6.png)
+![qmake](img/qt5/6/6.6.png)
 ```sh
 图 6.6所示，在此页面中确定自己的类名
 ```
 
-    ![qmake](img/qt5/6/6.7.png)
+![qmake](img/qt5/6/6.7.png)
 ```sh
 图 6.7
 ```
 
-    ![qmake](img/qt5/6/6.8.png)
+![qmake](img/qt5/6/6.8.png)
 ```sh
 图 6.8 所示，在点击 XXX.ui开启QT编程界面
 ```
 
-    ![qmake](img/qt5/6/6.9.png)
+![qmake](img/qt5/6/6.9.png)
 ```sh
 图 6.9 所示，在此页面进行UI界面的设计
 ```
 
-    ![qmake](img/qt5/6/6.10.png)
+![qmake](img/qt5/6/6.10.png)
 ```sh
 图 6.10所示，在此页面选取想要重载的控件的哪个槽函数
 ```
