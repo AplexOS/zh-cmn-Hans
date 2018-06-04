@@ -11,3 +11,6 @@
 
 ## 四、 快速烧录启动文档，请参考：
 * [QuickStart](QuickStart.md)
+
+## 五、系统的测试，请参考：
+* [test](Testsys.md)
