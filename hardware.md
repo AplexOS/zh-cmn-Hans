@@ -25,7 +25,7 @@
   ![power_in](img/power_in.png)  
   DC_IN 为 9-36V 宽电压输入
   ### 2. MIO1
-  ![MIO1_VCC](img/MIO1_VCC.jdg)
+  ![MIO1_VCC](img/MIO1_VCC.jpg)
   ![MIO1](img/MIO1.jpg)
   MIO1 VCC 可以通过
   ### 3. MIO2
