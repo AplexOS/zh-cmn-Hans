@@ -64,3 +64,18 @@
   * 看 GPIO6 GPIO7 电平是否发生了变化。
 * 网口测试
   * 看是否能接上 SSH, Telnet, Vsftpd
+* Watchdog 测试方法
+  * 执行如下命令：
+  * `echo 0 > /dev/watchdog`
+  * 60S 后 会重启，表示看门狗OK。
+* 热机程序测试
+  * 执行如下命令
+  * `/root/testcpu.sh start`
+  * 执行 `top` 命令，可以看到 CPU 占用率。
+  * `/root/testcpu.sh stop`
+  * 结束命令
+* 开关机测试
+  * 开始
+  * `/root/on-off.sh start`
+  * 结束
+  * `/root/on-off.sh stop`
