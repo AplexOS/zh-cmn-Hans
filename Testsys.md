@@ -19,16 +19,24 @@
   * 先按照上面的方法，将两个串口对接.
   * 使用 ssh 登录进入，登录两个 SSH， 开两个窗口。
   * 两个窗口，分别执行命令
-  * `microcom /dev/ttyS1`
-  * `microcom /dev/ttyS2`
+  * `microcom /dev/ttyO1`
+  * `microcom /dev/ttyO2`
   * 操作如下图所示 :
     ![ssh_test](img/SSH_test.jpg)
     ![serial_test](img/serial_test.jpg)
   * 退出为 ctrl + x
   * 后面的测试如上
   * RS-232可以自发自收测试。
-  * microcom /dev/ttyS1
+  * microcom /dev/ttyO1
   * 按键盘，看有没有数据返回
+  * 相应节点对应如下：
+  * /dev/ttyO1	   RS-232	RS232_TX1 RS232_RX1 GND_GIO1 RS-485	RS485_DATA1+ RS485_DATA1-
+  * /dev/ttyO2	   RS-232	RS232_TX2 RS232_RX2 GND_GIO1 RS-485	RS485_DATA2+ RS485_DATA2-
+  * /dev/ttyO3	   RS-485	RS485_DATA3+ RS485_DATA3-
+  * /dev/ttyO4	   RS-485	RS485_DATA4+ RS485_DATA4-
+  * /dev/ttyO5	   RS-485	RS485_DATA5+ RS485_DATA5-
+  * /dev/ttyUSB0	 RS-485	RS485_DATA6+ RS485_DATA6-
+
 * USB 测试方法
   * 插入 U 盘
   * 执行如下命令
@@ -43,13 +51,13 @@
   * echo 12345 > /dev/eeprom
   * cat /dev/eeprom
   * 看 会不会有 数字， 而且有一堆乱码，一般情况下
-* USB1 上面的 GPIO6 GPIO7 测试
+* USB1 上面的 AM335X_GPIO1 AM335X_GPIO2 测试
   * 执行如下命令
   * ` echo 1 > /sys/class/gpio/gpio110/value`
   * ` echo 1 > /sys/class/gpio/gpio111/value`
   * ` echo 0 > /sys/class/gpio/gpio110/value`
   * ` echo 0 > /sys/class/gpio/gpio111/value`
-  * 看 GPIO6 GPIO7 电平是否发生了变化。
+  * 看 AM335X_GPIO1 AM335X_GPIO2 电平是否发生了变化。
 * 网口测试
   * 看是否能接上 SSH, Telnet, Vsftpd
   * 配置网口 IP 的方法为 `ifconfig`
