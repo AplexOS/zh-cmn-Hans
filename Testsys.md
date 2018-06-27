@@ -69,7 +69,7 @@
   * 开始
   * `/root/on-off.sh start`
   * 结束
-  * `/root/on-off.sh stop`
+  * `/root/on-off.sh end`
 * ntp
   * 使用 `ntpdate -h` 查看使用已经安装该程序
 * Vsftpd
@@ -103,4 +103,4 @@
 * iproute2
   * `echo 200 John >>/etc/iproute2/rt_tables`
   * `ip rule add from 10.0.0.10 table John`
-  * 看是否报错，如果没有，表示OK。 
+  * 看是否报错，如果没有，表示OK。
