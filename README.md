@@ -1,4 +1,4 @@
-# CMI_AT752_BSP
+# ECM_5206_BSP
 
 ## 一、硬件简介请参考：
 * [Hardware](Hardware.md)

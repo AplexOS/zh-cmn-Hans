@@ -1,28 +1,26 @@
-# CMI_AT752 快速启动文档
+# ECM_5206 快速启动文档
 * 请参考[CrossCompiler](CrossCompiler.md)进行镜像编译。
 * 请参考[MkSDimg](MkSDimg.md) 制作 SD 。
 
 ## 一、软件的烧写
 * debug 原理图如下：
   ![debug](img/debug.jpg)
-* 此处为 3.3V TTL 信号。
-* 一般 PC 是通过 USB 串口模块转换过来.
+* 此处为 RS-232 信号。
 * 设置 波特率 115200， 数据位 8， 检验位 none, 停止位 1.
-* 烧录软件时，先将 CMI_AT752 的J1 取下。
+* 烧录软件时，先将 ECM_5206 的 SW1 1 拨到 OFF
 * 插入 SD 卡，上电。
 * 当 debug 出现如下信息时候，表示烧录系统完毕。
    ![burn](img/burnsys.png)
 
 ## 二、系统启动
-* 扣上 J1。
+* SW 拨到 ON。
 * 重新上电。
-* 当 LED2 闪烁时，表示烧写完毕。
 * debug 有如下信息提示:
   ![startsys](img/startsys.png)
 * 登录用户： root
 * 登录密码： root
 
-## 三、使用 Telnet, ssh 登录 CMI_AT752
+## 三、使用 Telnet, ssh 登录 ECM_5206
 * 通过网线接入 ETH0 网口。
 * SSH 登录如下：
   * 登录 IP : `192.168.2.10`

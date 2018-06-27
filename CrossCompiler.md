@@ -37,12 +37,12 @@
 ```shell
   cd ~/aplex
   mkdir u-boot2011.09 && cd u-boot2011.09
-  git init  && git pull https://github.com/AplexOS/U-Boot  CMI_AT752_Uboot-v2011.09:master
+  git init  && git pull https://github.com/AplexOS/U-Boot  ECM_5206-Linux-Uboot-v2011.09:master
 ```
 * Kernel3.2.0 下载
 ```shell
   cd ~/aplex && mkdir kernel3.2.0 && cd kernel3.2.0
-  git init && git pull https://github.com/AplexOS/Linux-Kernel  CMI_AT752_Kernel-v3.2.0:master
+  git init && git pull https://github.com/AplexOS/Linux-Kernel  ECM_5206-Linux-Kernel-v3.2.0:master
 ```
 
 * Filesystem 的下载
@@ -56,7 +56,7 @@
     cd ~/aplex && mkdir filesystem && cd filesystem
     su
     # su 是升级为 root 用户的命令
-    git init &&  git pull https://github.com/AplexOS/Filesystem  CMI_AT752_LINUX3.2.0_QT_ROOTFS:master
+    git init &&  git pull https://github.com/AplexOS/Filesystem  ECM_5206_LINUX3.2.0__ROOTFS:master
     exit
     # exit 是退出 root 用户的命令
   ```
@@ -65,7 +65,7 @@
 *  U-boot2011.09 的交叉编译
 ```shell
   cd ~/aplex/u-boot2011.09
-  make O=out cmi_at752 -j4
+  make O=out ecm_5206 -j4
   #  编译万的镜像为 out 目录下的 MLO u-boot.img
   sudo cp out/mkimage /bin/ -rf
   cp  out/MLO out/u-boot.img ~/image -rf
@@ -74,7 +74,7 @@
 * Kernel 3.2.0 的交叉编译
 ```shell
   cd ~/aplex/kernel3.2.0
-  make aplex_cmi_at752_defconfig && make uImage -j4
+  make aplex_ecm_5206_defconfig && make uImage -j4
   cp arch/arm/boot/uImage ~/image/
   # 将生成的 UImage 也放到 ~/image 里面
 ```
