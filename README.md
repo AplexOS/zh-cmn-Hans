@@ -14,3 +14,6 @@
 
 ## 五、系统的测试，请参考：
 * [test](Testsys.md)
+
+## 六、软件的交叉编译请参考：
+* [test](CrossCompiler_test.md)
