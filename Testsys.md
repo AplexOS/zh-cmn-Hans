@@ -5,13 +5,14 @@
 * COM1 的 DATA1- 接 DATA2-
 * COM1 的 DATA3+ 接 DATA4+
 * COM1 的 DATA3- 接 DATA4-
+* COM1 的 RS232_TX1 与 RS232_RX1 对接
 * 以此类推
-* COM1 上面的 RS-232自发自收, TX 接 RX
   ![com1](img/TEST_COM1.jpg)
-  ![com1](img/TEST_COM2.jpg)
-* USB1 接口上 RS232_TXD5 与 RXD5 对接
-* AM335X_GPIO6 AM335X_GPIO7 各接一个灯
-  ![USB1](img/test_usb1.jpg)
+  ![com3](img/TEST_COM3.jpg)
+* COM4 进行 DI DO 的对测
+  ![com4](img/TEST_COM4.jpg)
+* J3 的 USB 外接 U 盘进行测试
+* J3 上 4 个 GPIO 都与地相对接。
 
 ## 二、单独测试方法
 * 串口测试方法
@@ -43,13 +44,27 @@
   * echo 12345 > /dev/eeprom
   * cat /dev/eeprom
   * 看 会不会有 数字， 而且有一堆乱码，一般情况下
-* USB1 上面的 GPIO6 GPIO7 测试
+* USB1 上面的 AM335X_GPIO1 AM335X_GPIO2 ..  测试
   * 执行如下命令
-  * ` echo 1 > /sys/class/gpio/gpio110/value`
-  * ` echo 1 > /sys/class/gpio/gpio111/value`
-  * ` echo 0 > /sys/class/gpio/gpio110/value`
-  * ` echo 0 > /sys/class/gpio/gpio111/value`
-  * 看 GPIO6 GPIO7 电平是否发生了变化。
+  * `echo 0 > /dev/GPIO0 `
+  * `echo 0 > /dev/GPIO1 `
+  * `echo 0 > /dev/GPIO2 `
+  * `echo 0 > /dev/GPIO3 `
+  * `echo 1 > /dev/GPIO0 `
+  * `echo 1 > /dev/GPIO1 `
+  * `echo 1 > /dev/GPIO2 `
+  * `echo 1 > /dev/GPIO3 `
+  * 看 这四个 GPIO 的电平是否发生了变化。
+* DI DO 测试
+  * 执行如下命令
+  * `echo 0 > /dev/DO0`
+  * `echo 0 > /dev/DO1`
+  * `echo 0 > /dev/DO2`
+  * `echo 0 > /dev/DO3`  
+  * `echo 1 > /dev/DO0`
+  * `echo 1 > /dev/DO1`
+  * `echo 1 > /dev/DO2`
+  * `echo 1 > /dev/DO3`
 * 网口测试
   * 看是否能接上 SSH, Telnet, Vsftpd
   * 配置网口 IP 的方法为 `ifconfig`
