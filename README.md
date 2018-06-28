@@ -14,3 +14,6 @@
 
 ## 五、系统的测试，请参考：
 * [test](Testsys.md)
+
+## 六、例程的编写
+* [test](CrossCompiler_test.md)
