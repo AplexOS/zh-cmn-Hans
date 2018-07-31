@@ -1,4 +1,4 @@
-# CMI_AT101_BSP
+# CMI_AT151_BSP
 
 ## 一、硬件简介请参考：
 * [Hardware](Hardware.md)

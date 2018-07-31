@@ -36,12 +36,12 @@
 ```shell
   cd ~/aplex
   mkdir u-boot2016.05 && cd u-boot2016.05
-  git init  && git pull https://github.com/AplexOS/U-Boot  CMI_AT101-Linux-Uboot-v2016.05:master
+  git init  && git pull https://github.com/AplexOS/U-Boot  CMI_AT151-Linux-Uboot-v2016.05:master
 ```
 * Kernel4.4.12 下载
 ```shell
   cd ~/aplex && mkdir kernel4.4.12 && cd kernel4.4.12
-  git init && git pull https://github.com/AplexOS/Linux-Kernel  CMI_AT101-Linux-Kernel-v4.4.12:master
+  git init && git pull https://github.com/AplexOS/Linux-Kernel  CMI_AT151-Linux-Kernel-v4.4.12:master
 ```
 
 * Filesystem 的下载
@@ -55,7 +55,7 @@
     cd ~/aplex && mkdir filesystem && cd filesystem
     su
     # su 是升级为 root 用户的命令
-    git init &&  git pull https://github.com/AplexOS/Filesystem  CMI_AT101_LINUX4.4.12_ROOTFS:master
+    git init &&  git pull https://github.com/AplexOS/Filesystem  CMI_AT151_LINUX4.4.12_ROOTFS:master
     exit
     # exit 是退出 root 用户的命令
   ```
@@ -64,7 +64,7 @@
 *  U-boot2016.05 的交叉编译
 ```shell
   cd ~/aplex/u-boot2016.05/
-  make -j2 O=out  am335x_cmi_at101_defconfig all
+  make -j2 O=out  am335x_cmi_at151_defconfig all
   #  编译万的镜像为 out 目录下的 MLO u-boot.img
   sudo cp out/mkimage /bin/ -rf
   cp  out/MLO out/u-boot.img ~/image -rf
@@ -73,9 +73,9 @@
 * Kernel 4.4.12 的交叉编译
 ```shell
   cd ~/aplex/kernel4.4.12
-  make cmi_at101_defconfig  && make all -j4
+  make am335x_cmi_at151_defconfig  && make all -j4
   cp arch/arm/boot/uImage ~/image/ -rf
-  cp arch/arm/boot/dts/am335x-cmi_at101.dtb  ~/image/ -rf
+  cp arch/arm/boot/dts/am335x-cmi_at151.dtb  ~/image/ -rf
   # 将生成的 UImage 也放到 ~/image 里面
 ```
 * ubi.img 的生成

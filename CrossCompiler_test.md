@@ -1,4 +1,4 @@
-# CMI_AT101 软件交叉编译例程
+# CMI_AT151 软件交叉编译例程
 
 ## 一、 交叉编译环境
 * 参考：[CROSS_COMPILE](CrossCompiler.md) 配置交叉编译环境
@@ -16,6 +16,6 @@
   }
 ```
 * `arm-linux-gnueabihf-gcc test.c  -o test`
-* 通过 FTP 将 test 文件放入 CMI_AT101上面
+* 通过 FTP 将 test 文件放入 CMI_AT151上面
 * 执行效果如下
-  ![TEST1](img/IMG_TEST1.png)
+  ![TEST1](img/IMG_TEST1.jpg)

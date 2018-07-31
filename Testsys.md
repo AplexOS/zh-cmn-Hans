@@ -1,9 +1,9 @@
-# CMI_AT752 测试说明
+# CMI_AT151 测试说明
 
 ## 一、单独测试方法
 * 串口测试方法
-  * 串口测试方法, 假设测试 ttyS1
-  * `microcom /dev/ttyS1`
+  * 串口测试方法, 假设测试 ttyO1
+  * `microcom /dev/ttyO1`
   * 按键盘，看有没有数据返回
 * USB 测试方法
   * 插入 U 盘
