@@ -17,10 +17,14 @@
 
 ## 二、部分硬件原理图如下所示
 * COM1 硬件原理图如下:
+
   ![com1](img/IMG_COM1.jpg)  
 * COM2 硬件原理图如下:
+
   ![com1](img/IMG_COM2.jpg)
 * DEBUG 硬件原理图如下:
+
   ![debug](img/debug.jpg)
 * USB1 硬件原理图如下:
+
   ![USB1](img/usb1.jpg)
