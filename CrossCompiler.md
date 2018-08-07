@@ -7,6 +7,7 @@
    sudo apt-get update
    sudo apt-get install vim git
    sudo apt-get install   libc6:i386   libstdc++6:i386   libncurses5:i386   zlib1g:i386
+   sudo apt-get install mtd-utils
 ````
 * 创建相关目录，以备使用：
 ````shell
