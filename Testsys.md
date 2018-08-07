@@ -78,4 +78,4 @@
   * 开始
   * `/root/on-off.sh start`
   * 结束
-  * `/root/on-off.sh stop`
+  * `/root/on-off.sh end`
