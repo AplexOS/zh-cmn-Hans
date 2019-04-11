@@ -81,7 +81,7 @@
     ```shell
 	sudo mount /dev/mapper/loop0p1 /mnt
  	cd ~/image
-	sudo cp  MLO u-boot.img zImage am335x-cmi_at101.dtb  ubi.img  /mnt -rf
+	sudo cp  MLO u-boot.img zImage am335x-cmi_at151.dtb  ubi.img  /mnt -rf
 	sync
 	sudo umount /mnt
     ```
