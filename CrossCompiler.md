@@ -66,7 +66,6 @@
   cd ~/aplex/u-boot2016.05/
   make -j2 O=out  am335x_cmi_at151_defconfig all
   #  编译万的镜像为 out 目录下的 MLO u-boot.img
-  sudo cp out/mkimage /bin/ -rf
   cp  out/MLO out/u-boot.img ~/image -rf
   # mkimage 是生成 uImge 的工具
 ```
@@ -74,7 +73,7 @@
 ```shell
   cd ~/aplex/kernel4.4.12
   make am335x_cmi_at151_defconfig  && make all -j4
-  cp arch/arm/boot/uImage ~/image/ -rf
+  cp arch/arm/boot/zImage ~/image/ -rf
   cp arch/arm/boot/dts/am335x-cmi_at151.dtb  ~/image/ -rf
   # 将生成的 UImage 也放到 ~/image 里面
 ```
