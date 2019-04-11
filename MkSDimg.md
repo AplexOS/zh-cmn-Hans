@@ -77,7 +77,7 @@
     sudo kpartx -av /dev/loop0
     sudo mkfs.vfat    -n "boot" -F 16  /dev/mapper/loop0p1
   ```
-* 挂载这个分区并把 MLO、u-boot.img zImage am335x-cmi_at151.dtb ubi.img 拷贝进去。
+* 挂载这个分区并把 MLO、u-boot.img uImage ubi.img 拷贝进去。
     ```shell
 	sudo mount /dev/mapper/loop0p1 /mnt
  	cd ~/image
