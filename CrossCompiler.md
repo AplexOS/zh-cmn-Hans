@@ -67,7 +67,7 @@
   cd ~/aplex/u-boot2011.09
   make O=out ecm_5206 -j4
   #  编译万的镜像为 out 目录下的 MLO u-boot.img
-  sudo cp out/mkimage /bin/ -rf
+  sudo cp out/tools/mkimage /bin/ -rf
   cp  out/MLO out/u-boot.img ~/image -rf
   # mkimage 是生成 uImge 的工具
 ```
