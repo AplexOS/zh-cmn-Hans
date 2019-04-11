@@ -2,7 +2,8 @@
 
 ## 一、交叉编译器下载，以及交叉编译环境的配置
 * 交叉编译器下载地址：
-  [cc](https://pan.baidu.com/s/1mgyYfos?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=)
+  [cc](https://pan.baidu.com/s/1n4pOj_zive7dzDTQQpkFZw)
+  提取妈 ： hjwt
   * 下载完成之后，放入 Ubuntu14.04 以上操作系统上
 * 执行如下命令进行安装相关软件以及下载相关代码
 ````shell
